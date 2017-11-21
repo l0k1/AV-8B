@@ -266,6 +266,7 @@
                3.45  4.7255
             </tableData>
           </table>
+          <property>tune/lift/alpha</property>
       </product>
     </function>
 
@@ -277,6 +278,7 @@
           <property>velocities/q-aero-rad_sec</property>
           <property>aero/ci2vel</property>
           <value> 3.6243 </value>
+          <property>tune/lift/pitch_rate</property>
         </product>
       </function>
 
@@ -288,6 +290,7 @@
            <property>aero/alphadot-rad_sec</property>
            <property>aero/ci2vel</property>
            <value> 2.4166 </value>
+           <property>tune/lift/alpha_rate</property>
         </product>
       </function>
 
@@ -298,6 +301,7 @@
            <property>metrics/Sw-sqft</property>
            <property>fcs/elevator-pos-rad</property>
            <value> 0.5661 </value>
+           <property>tune/lift/elevator</property>
        </product>
     </function>
 
@@ -308,6 +312,7 @@
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
            <value> 0.0100 </value>
+           <property>tune/lift/flap</property>
        </product>
     </function>
 
@@ -325,6 +330,7 @@
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <value> 0.0133 </value>
+          <property>tune/drag/minimum</property>
        </product>
     </function>
 
@@ -343,6 +349,7 @@
               3.45    0.6602
             </tableData>
           </table>
+          <property>tune/drag/alpha</property>
        </product>
     </function>
 
@@ -353,6 +360,7 @@
            <property>metrics/Sw-sqft</property>
            <property>aero/cl-squared</property>
            <value> 0.0895 </value>
+          <property>tune/drag/induced</property>
          </product>
     </function>
 
@@ -370,6 +378,7 @@
                 1.80    0.0150
             </tableData>
           </table>
+          <property>tune/drag/mach</property>
         </product>
     </function>
 
@@ -388,6 +397,7 @@
                1.57    1.2300
             </tableData>
           </table>
+          <property>tune/drag/beta</property>
        </product>
     </function>
 
@@ -398,6 +408,7 @@
            <property>metrics/Sw-sqft</property>
            <abs><property>fcs/elevator-pos-rad</property></abs>
            <value> 0.0400 </value>
+           <property>tune/drag/elevator</property>
        </product>
     </function>
 
@@ -408,6 +419,7 @@
            <property>metrics/Sw-sqft</property>
            <property>gear/gear-pos-norm</property>
            <value> 0.0200 </value>
+           <property>tune/drag/gear</property>
          </product>
     </function>
 
@@ -418,6 +430,7 @@
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
            <value> 0.0023 </value>
+           <property>tune/drag/flap</property>
          </product>
     </function>
 
@@ -429,6 +442,7 @@
            <property>metrics/Sw-sqft</property>
            <property>fcs/speedbrake-pos-norm</property>
            <value> 0.0600 </value>
+           <property>tune/drag/speedbrake</property>
          </product>
     </function>
 
@@ -443,6 +457,7 @@
            <property>metrics/Sw-sqft</property>
            <property>aero/beta-rad</property>
            <value> -0.6496 </value>
+           <property>tune/side/beta</property>
        </product>
     </function>
     <function name="aero/force/Side_roll_rate">
@@ -461,6 +476,7 @@
                 17308920   0.0181
              </tableData>
            </table>
+           <property>tune/side/roll_rate</property>
        </product>
     </function>
 
@@ -472,6 +488,7 @@
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
            <value> 0.7938 </value>
+           <property>tune/side/yaw_rate</property>
        </product>
     </function>
 
@@ -482,6 +499,7 @@
            <property>metrics/Sw-sqft</property>
            <property>fcs/rudder-pos-rad</property>
            <value> 0.1975 </value>
+           <property>tune/side/rudder</property>
        </product>
     </function>
 
@@ -497,6 +515,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/alpha-rad</property>
            <value> -0.6930 </value>
+           <property>tune/pitch/alpha</property>
        </product>
     </function>
 
@@ -514,6 +533,7 @@
               2.0    -0.2891
             </tableData>
           </table>
+          <property>tune/pitch/elevator</property>
        </product>
     </function>
 
@@ -526,6 +546,7 @@
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
            <value> -7.6753 </value>
+           <property>tune/pitch/damp</property>
        </product>
     </function>
 
@@ -538,6 +559,7 @@
            <property>aero/ci2vel</property>
            <property>aero/alphadot-rad_sec</property>
            <value> -5.1177 </value>
+           <property>tune/pitch/alphadot</property>
        </product>
     </function>
 
@@ -561,6 +583,7 @@
                   0.3491 -11.8091  -0.8679  -0.3194  -0.1831
              </tableData>
            </table>
+           <property>tune/roll/beta</property>
        </product>
     </function>
 
@@ -572,7 +595,8 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/p-aero-rad_sec</property>
-           <value> 0.1119 </value>
+           <value> -0.1119 </value>
+           <property>tune/roll/damp</property>
        </product>
     </function>
 
@@ -593,6 +617,7 @@
                   0.3491  11.7876   0.9638   0.4138   0.3151
              </tableData>
            </table>
+           <property>tune/roll/yaw</property>
        </product>
     </function>
 
@@ -610,6 +635,7 @@
               2.0    0.0275
             </tableData>
           </table>
+          <property>tune/roll/aileron</property>
        </product>
     </function>
 
@@ -621,6 +647,7 @@
            <property>metrics/bw-ft</property>
            <property>fcs/rudder-pos-rad</property>
            <value> 0.0100 </value>
+           <property>tune/roll/rudder</property>
        </product>
     </function>
 
@@ -646,6 +673,7 @@
                   0.3491   1.0000   0.0000
              </tableData>
            </table>
+           <property>tune/yaw/alpha</property>
        </product>
     </function>
 
@@ -657,6 +685,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
            <value> 0.1907 </value>
+           <property>tune/yaw/beta</property>
        </product>
     </function>
 
@@ -677,6 +706,7 @@
                 17308920  -0.0111
              </tableData>
            </table>
+           <property>tune/yaw/roll_rate</property>
        </product>
     </function>
 
@@ -689,6 +719,7 @@
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
            <value> -0.3077 </value>
+           <property>tune/yaw/damp</property>
        </product>
     </function>
 
@@ -700,6 +731,7 @@
            <property>metrics/bw-ft</property>
            <property>fcs/rudder-pos-rad</property>
            <value> -0.1206 </value>
+           <property>tune/yaw/rudder</property>
        </product>
     </function>
 
@@ -711,6 +743,7 @@
            <property>metrics/bw-ft</property>
            <property>fcs/left-aileron-pos-rad</property>
            <value> 0.0000 </value>
+           <property>tune/yaw/aileron</property>
        </product>
     </function>
 

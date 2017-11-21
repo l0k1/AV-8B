@@ -94,7 +94,7 @@
 			<config>
 				<x-offset-m archive="y">0</x-offset-m>
 				<y-offset-m archive="y">1.23</y-offset-m>
-				<z-offset-m archive="y">3.12</z-offset-m>
+				<z-offset-m archive="y">-3.9</z-offset-m>
 				<pitch-offset-deg archive="y">-11</pitch-offset-deg>
 				<default-field-of-view-deg> 86.3 </default-field-of-view-deg>
 			</config>
@@ -108,7 +108,7 @@
 				<from-model-idx type="int">0</from-model-idx>
 				<x-offset-m archive="y">0</x-offset-m>
 				<y-offset-m archive="y">1.23</y-offset-m>
-				<z-offset-m archive="y">2.7</z-offset-m>
+				<z-offset-m archive="y">-4.4</z-offset-m>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>180</heading-offset-deg>
 				<default-field-of-view-deg>110</default-field-of-view-deg>
@@ -123,52 +123,10 @@
 				<from-model-idx type="int">0</from-model-idx>
 				<x-offset-m archive="y">0.3</x-offset-m>
 				<y-offset-m archive="y">1.23</y-offset-m>
-				<z-offset-m archive="y">3.7</z-offset-m>
+				<z-offset-m archive="y">-3.7</z-offset-m>
 				<pitch-offset-deg>-3</pitch-offset-deg>
 				<heading-offset-deg>10</heading-offset-deg>
 				<default-field-of-view-deg>65</default-field-of-view-deg>
-			</config>
-		</view>
-
-		<view n="1">
-			<config>
-				<target-z-offset-m archive="y">8</target-z-offset-m>
-				<pitch-offset-deg archive="y">10</pitch-offset-deg>	 
-			</config>
-		</view>
-
-		<view n="2">
-			<config>
-				<target-z-offset-m archive="y">8</target-z-offset-m>
-				<pitch-offset-deg archive="y">10</pitch-offset-deg>	 
-			</config>
-		</view>
-
-		<view n="3">
-			<config>
-				<target-z-offset-m archive="y">8</target-z-offset-m>
-				<pitch-offset-deg archive="y">10</pitch-offset-deg>	 
-			</config>
-		</view>
-
-		<view n="4">
-			<config>
-				<target-z-offset-m archive="y">8</target-z-offset-m>
-				<pitch-offset-deg archive="y">10</pitch-offset-deg>	 
-			</config>
-		</view>
-
-		<view n="5">
-			<config>
-				<target-z-offset-m archive="y">8</target-z-offset-m>
-				<pitch-offset-deg archive="y">10</pitch-offset-deg>	 
-			</config>
-		</view>
-
-		<view n="6">
-			<config>
-				<target-z-offset-m archive="y">8</target-z-offset-m>
-				<pitch-offset-deg archive="y">10</pitch-offset-deg>	 
 			</config>
 		</view>
 
@@ -237,7 +195,7 @@
 
 		<menubar>
 			<default>
-				<menu n="10">
+				<menu n="100">
 					<label>AV-8B</label>
 					<enabled type="bool">true</enabled>
 				   
@@ -246,6 +204,51 @@
 						<binding>
 							<command>nasal</command>
 							<script>aircraft.livery.dialog.open()</script>
+						</binding>
+					</item>
+				</menu>
+				<menu n="101">
+					<label>FDM Tuning</label>
+					<item>
+						<label>Tune Drag</label>
+						<binding>
+							<command>nasal</command>
+							<script>dialog.tuner_drag_dialog.open()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Tune Lift</label>
+						<binding>
+							<command>nasal</command>
+							<script>dialog.tuner_lift_dialog.open()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Tune Pitch</label>
+						<binding>
+							<command>nasal</command>
+							<script>dialog.tuner_pitch_dialog.open()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Tune Roll</label>
+						<binding>
+							<command>nasal</command>
+							<script>dialog.tuner_roll_dialog.open()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Tune Side</label>
+						<binding>
+							<command>nasal</command>
+							<script>dialog.tuner_side_dialog.open()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Tune Yaw</label>
+						<binding>
+							<command>nasal</command>
+							<script>dialog.tuner_yaw_dialog.open()</script>
 						</binding>
 					</item>
 				</menu>
@@ -366,6 +369,60 @@
 
 	</sim>
 
+	<fdm>
+		<jsbsim>
+			<!-- for in-flight FDM tuning -->
+			<tune>
+				<lift>
+					<alpha type="double">1</alpha>
+					<pitch_rate type="double">1</pitch_rate>
+					<alpha_rate type="double">1</alpha_rate>
+					<elevator type="double">1</elevator>
+					<flap type="double">1</flap>
+				</lift>
+				<drag>
+					<minimum type="double">1</minimum>
+					<alpha type="double">1</alpha>
+					<induced type="double">1</induced>
+					<mach type="double">1</mach>
+					<beta type="double">1</beta>
+					<elevator type="double">1</elevator>
+					<gear type="double">1</gear>
+					<flap type="double">1</flap>
+					<speedbrake type="double">1</speedbrake>
+					<chute type="double">1</chute>
+				</drag>
+				<side>
+					<beta type="double">1</beta>
+					<roll_rate type="double">1</roll_rate>
+					<yaw_rate type="double">1</yaw_rate>
+					<rudder type="double">1</rudder>
+				</side>
+				<pitch>
+					<alpha type="double">1</alpha>
+					<elevator type="double">1</elevator>
+					<damp type="double">1</damp>
+					<alphadot type="double">1</alphadot>
+				</pitch>
+				<roll>
+					<beta type="double">1</beta>
+					<damp type="double">1</damp>
+					<yaw type="double">1</yaw>
+					<aileron type="double">1</aileron>
+					<rudder type="double">1</rudder>
+				</roll>
+				<yaw>
+					<alpha type="double">1</alpha>
+					<beta type="double">1</beta>
+					<roll_rate type="double">1</roll_rate>
+					<damp type="double">1</damp>
+					<rudder type="double">1</rudder>
+					<aileron type="double">1</aileron>
+				</yaw>
+			</tune>
+		</jsbsim>
+	</fdm>
+
 	<!-- Settings -->
 
 	<controls>
@@ -473,11 +530,12 @@
 		</fuel>
 	</consumables>
 
-<!-- Nasal -->
+	<!-- Nasal -->
 
-<nasal>
-	<harrier>	<file>Aircraft/AV-8B/Nasal/liveries.nas</file>	</harrier>
-	<hud>		<file>Aircraft/AV-8B/Nasal/hud.nas</file>			</hud>
-</nasal>
+	<nasal>
+		<harrier>	<file>Aircraft/AV-8B/Nasal/liveries.nas</file>		</harrier>
+		<hud>		<file>Aircraft/AV-8B/Nasal/hud.nas</file>			</hud>
+		<dialogs>	<file>Aircraft/AV-8B/Nasal/dialogs.nas</file>		</dialogs>
+	</nasal>
 
 </PropertyList>
