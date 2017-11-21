@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+
+<!-- comms panel -->
+
+<PropertyList>
+
+ <!--  master warn panel -->
+ 
+ <!-- Unlit -->
+ 
+ <text>
+  <name>WARN1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+     <x-m>2.653</x-m>
+     <y-m>-0.158</y-m>
+     <z-m>0.717</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">WARN</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ <text>
+  <name>MASTER1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+     <x-m>2.653</x-m>
+     <y-m>-0.16</y-m>
+     <z-m>0.725</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">MASTER</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <text>
+  <name>fuel1a</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.654</x-m>
+     <y-m>-0.151</y-m>
+     <z-m>0.684</z-m>
+   <roll-deg>-90</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">F U E L</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ <text>
+  <name>fuel2a</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.654</x-m>
+     <y-m>-0.132</y-m>
+     <z-m>0.684</z-m>
+   <roll-deg>-90</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">F U E L</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <text>
+  <name>sec</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.655</x-m>
+     <y-m>-0.157</y-m>
+     <z-m>0.649</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">15 SEC</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+  <text>
+  <name>mfs</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.655</x-m>
+     <y-m>-0.154</y-m>
+     <z-m>0.633</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">MFS</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ <text>
+  <name>bingo1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.656</x-m>
+     <y-m>-0.155</y-m>
+     <z-m>0.619</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">BINGO</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <text>
+  <name>water</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.656</x-m>
+     <y-m>-0.154</y-m>
+     <z-m>0.603</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">H2O</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <!-- lit versions -->
+ 
+   <animation>
+  <type>material</type>
+  <object-name>MASTER</object-name>
+   <object-name>WARN</object-name>
+    <object-name>fuel1</object-name>
+	<object-name>fuel2</object-name>
+ 
+   
+   <object-name>bingo</object-name>
+  
+  
+  <ambient>
+    <red>1</red>
+    <green>1</green>
+    <blue>0.0</blue>
+  </ambient>
+  <diffuse>
+    <red>0.8</red>
+    <green>0.8</green>
+    <blue>0.0</blue>
+  </diffuse>
+  <emission>
+    <red>0.8</red>
+    <green>0.8</green>
+    <blue>0.3</blue>
+  </emission> 
+ </animation>
+ 
+  <text>
+  <name>WARN</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+     <x-m>2.6531</x-m>
+     <y-m>-0.158</y-m>
+     <z-m>0.717</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">WARN</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ <text>
+  <name>MASTER</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+     <x-m>2.6531</x-m>
+     <y-m>-0.16</y-m>
+     <z-m>0.725</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">MASTER</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <text>
+  <name>fuel1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.6541</x-m>
+     <y-m>-0.151</y-m>
+     <z-m>0.684</z-m>
+   <roll-deg>-90</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">F U E L</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ <text>
+  <name>fuel2</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.6541</x-m>
+     <y-m>-0.132</y-m>
+     <z-m>0.684</z-m>
+   <roll-deg>-90</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">F U E L</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+
+ 
+<text>
+  <name>bingo</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.6561</x-m>
+     <y-m>-0.155</y-m>
+     <z-m>0.619</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">BINGO</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <!-- Animations -->
+ 
+ <animation>
+        <type>select</type>
+       <object-name>MASTER</object-name>
+   <object-name>WARN</object-name>
+    <object-name>fuel1</object-name>
+	<object-name>fuel2</object-name>
+        <condition>
+			<less-than>
+				<property>consumables/fuel/total-fuel-lbs</property>
+						<value>2000</value>
+					</less-than>
+					
+			</condition>
+    </animation>
+	
+	<animation>
+        <type>select</type>
+       <object-name>bingo</object-name>
+  
+        <condition>
+			<less-than>
+				<property>consumables/fuel/total-fuel-lbs</property>
+						<value>1200</value>
+					</less-than>
+					
+			</condition>
+    </animation>
+
+
+</PropertyList>

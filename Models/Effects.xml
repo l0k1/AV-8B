@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <model>
+        <path>Aircraft/Harrier-GR9/Models/Effects/Tiptrail/Tiptrail.xml</path>
+        <offsets>
+            <x-m> 8.2</x-m>
+            <y-m>-4.6</y-m>
+            <z-m> 0.3</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR9/Models/Effects/Tiptrail/Tiptrail.xml</path>
+        <offsets>
+            <x-m>8.2</x-m>
+            <y-m>4.6</y-m>
+            <z-m>0.3</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier_GR9/Models/Effects/Smoke/SmokeLeft.xml</path>
+        <offsets>
+            <x-m> 6.000</x-m>
+            <y-m>-0.883</y-m>
+            <z-m> 0.500</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR9/Models/Effects/Smoke/SmokeRight.xml</path>
+        <offsets>
+            <x-m> 6.000</x-m>
+            <y-m> 0.883</y-m>
+            <z-m> 0.500</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR9/Models/Effects/Trail/TrailLeft.xml</path>
+        <offsets>
+            <x-m> 6.000</x-m>
+            <y-m>-0.883</y-m>
+            <z-m> 0.500</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR9/Models/Effects/Trail/TrailRight.xml</path>
+        <offsets>
+            <x-m>6.000</x-m>
+            <y-m>0.883</y-m>
+            <z-m>0.500</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>WashLeft</name>
+        <path>Aircraft/Harrier-GR9/Models/Effects/Wash/Wash.xml</path>
+        <condition>
+            <equals>
+                <property>controls/state/low_level</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>25.00</x-m>
+            <y-m> 4.50</y-m>
+            <z-m> 0.00</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>WashRight</name>
+        <path>Aircraft/Harrier-GR9/Models/Effects/Wash/Wash.xml</path>
+        <condition>
+            <equals>
+                <property>controls/state/low_level</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>25.00</x-m>
+            <y-m>-4.50</y-m>
+            <z-m> 0.00</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>translate</type>
+        <object-name>WashLeft</object-name>
+        <object-name>WashRight</object-name>
+        <property>position/altitude-agl-ft</property>
+        <condition>
+            <equals>
+                <property>controls/state/low_level</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>300</ind>
+                <dep>-90</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y> 0</y>
+            <z> 1</z>
+        </axis>
+    </animation>
+
+    <model>
+        <path>Aircraft/Harrier-GR9/Models/Effects/FX/FX2.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+</PropertyList>

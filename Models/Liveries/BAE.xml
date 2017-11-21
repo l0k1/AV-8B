@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">British Aerospace</name>
+				<texture>Liveries/BAE.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/BAE.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>
+

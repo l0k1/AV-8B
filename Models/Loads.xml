@@ -1,0 +1,1158 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<model>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/pylons.xml</path>
+	</model>	
+
+	<!--station left 1 -->
+
+	
+	<model>
+		<name>left-aim9-1</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/AIM9.xml</path>
+		<offsets>
+			<x-m> 7.9</x-m>
+			<y-m>-3.95</y-m>
+			<z-m>0.1</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-aim9-1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>AIM9L</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>left-brimstone-1</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone1.xml</path>
+		<offsets>
+			<x-m> 8.0</x-m>
+			<y-m>-3.95</y-m>
+			<z-m>-0.6</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-brimstone-1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>Brimstone</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+	
+
+	
+	<model>
+		<name>left-500lb-0</name>
+		<path>Aircraft/FGUK-weapons/Bombs/mk82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m> 8.2</x-m>
+			<y-m>-3.95</y-m>
+			<z-m>0.03</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-500lb-0</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>500lb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	
+	<model>
+		<name>left-gbu12-0</name>
+		<path>Aircraft/FGUK-weapons/Bombs/gbu12/gbu12.xml</path>
+		<offsets>
+			<x-m> 8.2</x-m>
+			<y-m>-4.02</y-m>
+			<z-m>-0.06</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			<roll-deg>-25</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-gbu12-0</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[0]</property>
+					<value>GBU-12</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+	
+	<!--station left 2 -->
+	
+
+<model>
+		<name>left-droptank1</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/exTank.ac</path>
+		<offsets>
+			<x-m> 7.9</x-m>
+			<y-m>-3.25</y-m>
+			<z-m>-0.0525</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-droptank1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>L Droptank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+
+	<model>
+		<name>left-ferrytank1</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/tank1500.xml</path>
+		<offsets>
+			<x-m> 7.4</x-m>
+			<y-m>-3.25</y-m>
+			<z-m>-0.0525</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-ferrytank1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>L Ferrytank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	
+	<model>
+		<name>left-bl7551</name>
+		<path>Aircraft/FGUK-weapons/Bombs/bl755/bl755.xml</path>
+		<offsets>
+			<x-m> 7.9</x-m>
+			<y-m>-3.25</y-m>
+			<z-m>-0.0525</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-bl7551</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>BL755</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+	
+		
+<model>
+		<name>left-mk131</name>
+		<path>Aircraft/FGUK-weapons/Bombs/MK13/mk13.xml</path>
+		<offsets>
+			<x-m> 7.7</x-m>
+			<y-m>-3.25</y-m>
+			<z-m>-0.12</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-mk131</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>MK13</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>		
+
+	
+	<model>
+		<name>left-5001</name>
+		<path>Aircraft/FGUK-weapons/Bombs/mk82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m> 7.7</x-m>
+			<y-m>-3.26</y-m>
+			<z-m>0.04</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-5001</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>500lb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+	
+
+	<model>
+		<name>left-gbu121</name>
+		<path>Aircraft/FGUK-weapons/Bombs/gbu12/gbu12.xml</path>
+		<offsets>
+			<x-m> 7.9</x-m>
+			<y-m>-3.3</y-m>
+			<z-m>-0.04</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			<roll-deg>-20</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-gbu121</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>GBU-12</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+	
+	<model>
+		<name>left-brimstone2</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone2.xml</path>
+		<offsets>
+			<x-m> 7.4</x-m>
+			<y-m>-3.25</y-m>
+			<z-m>-0.6</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-brimstone2</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[1]</property>
+					<value>Brimstone</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+	
+	<!--station left 3 -->
+	<model>
+		<name>left-aim9-2</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/AIM9.xml</path>
+		<offsets>
+			<x-m> 7.4</x-m>
+			<y-m>-2.56</y-m>
+			<z-m>0.26</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-aim9-2</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[2]</property>
+					<value>AIM9L</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation>
+
+	<!--station left 4 -->
+
+	<model>
+		<name>left-droptank</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/exTank.ac</path>
+		<offsets>
+			<x-m> 7.1862</x-m>
+			<y-m>-1.9207</y-m>
+			<z-m>-0.0025</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-droptank</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>L Droptank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>left-ferrytank</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/tank1500.xml</path>
+		<offsets>
+			<x-m> 7.2504</x-m>
+			<y-m>-1.9214</y-m>
+			<z-m> 0.0325</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-ferrytank</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>L Ferrytank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation> 
+
+	
+	<model>
+		<name>left-bl7552</name>
+		<path>Aircraft/FGUK-weapons/Bombs/bl755/bl755.xml</path>
+		<offsets>
+			<x-m> 7.1862</x-m>
+			<y-m>-1.9207</y-m>
+			<z-m>0.033</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-bl7552</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>BL755</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	
+	<model>
+		<name>left-mk132</name>
+		<path>Aircraft/FGUK-weapons/Bombs/MK13/mk13.xml</path>
+		<offsets>
+			<x-m> 7.1862</x-m>
+			<y-m>-1.9207</y-m>
+			<z-m>-0.02</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-mk132</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>MK13</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+		
+		
+		<model>
+		<name>left-5002</name>
+		<path>Aircraft/FGUK-weapons/Bombs/mk82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m> 7.1862</x-m>
+			<y-m>-1.9207</y-m>
+			<z-m>0.13</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-5002</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>500lb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+		
+	
+		<model>
+		<name>left-gbu122</name>
+		<path>Aircraft/FGUK-weapons/Bombs/gbu12/gbu12.xml</path>
+		<offsets>
+			<x-m> 7.4</x-m>
+			<y-m>-1.97</y-m>
+			<z-m>0.05</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			<roll-deg>-25</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-gbu122</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>GBU-12</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	
+	<model>
+		<name>left-gbu242</name>
+		<path>Aircraft/FGUK-weapons/Bombs/gbu24/gbu24.xml</path>
+		<offsets>
+			<x-m> 7.25</x-m>
+			<y-m>-1.9207</y-m>
+			<z-m>0.1</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-gbu242</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>GBU-24</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	
+	<model>
+		<name>left-brimstone3</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone3.xml</path>
+		<offsets>
+			<x-m> 7.0</x-m>
+			<y-m>-1.9</y-m>
+			<z-m>-0.5</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-brimstone3</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[3]</property>
+					<value>Brimstone</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[3]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation>
+	
+	<!--station left 5 -->
+	<model>
+		<name>left-fin</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/fin.ac</path>
+		<offsets>
+			<x-m>-0.7</x-m>
+			<y-m>-0.5</y-m>
+			<z-m>-0.07</z-m>
+			<pitch-deg>0</pitch-deg>
+			<roll-deg>-30</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>left-fin</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[4]</property>
+					<value>Fin</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[4]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation> 
+
+	<!-- centre station  -->
+	<model>
+		<name>centre</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/Camera.ac</path>
+		<offsets>
+			<x-m> 6.7302</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>-0.4461</z-m>
+			<pitch-deg>0</pitch-deg>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>centre</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[5]</property>
+					<value>Camera Pod</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[5]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation> 
+
+	<!--station right 5 -->
+	<model>
+		<name>right-fin</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/fin.ac</path>
+		<offsets>
+			<x-m>-0.7</x-m>
+			<y-m>0.5</y-m>
+			<z-m>-0.07</z-m>
+			<pitch-deg>0</pitch-deg>
+			<roll-deg>30</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-fin</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[6]</property>
+					<value>Fin</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[6]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation> 
+
+	<!--station right 4 -->
+
+	<model>
+		<name>right-droptank</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/exTank.ac</path>
+		<offsets>
+			<x-m> 7.1862</x-m>
+			<y-m> 1.9207</y-m>
+			<z-m>-0.0025</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-droptank</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>R Droptank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation> 
+
+	<model>
+		<name>right-ferrytank</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/tank1500.xml</path>
+		<offsets>
+			<x-m> 7.2504</x-m>
+			<y-m> 1.9214</y-m>
+			<z-m> 0.0325</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-ferrytank</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>R Ferrytank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation> 
+
+	
+		<model>
+		<name>right-bl7552</name>
+		<path>Aircraft/FGUK-weapons/Bombs/bl755/bl755.xml</path>
+		<offsets>
+			<x-m> 7.1862</x-m>
+			<y-m>1.9207</y-m>
+			<z-m>0.033</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-bl7552</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>BL755</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>right-mk132</name>
+		<path>Aircraft/FGUK-weapons/Bombs/MK13/mk13.xml</path>
+		<offsets>
+			<x-m> 7.1862</x-m>
+			<y-m>1.915</y-m>
+			<z-m>-0.02</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-mk132</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>MK13</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+	
+		
+		<model>
+		<name>right-5002</name>
+		<path>Aircraft/FGUK-weapons/Bombs/mk82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m> 7.1862</x-m>
+			<y-m>1.9207</y-m>
+			<z-m>0.13</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-5002</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>500lb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+			
+		
+	<model>
+		<name>right-gbu122</name>
+		<path>Aircraft/FGUK-weapons/Bombs/gbu12/gbu12.xml</path>
+		<offsets>
+			<x-m> 7.4</x-m>
+			<y-m>1.87</y-m>
+			<z-m>0.05</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			<roll-deg>-25</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-gbu122</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>GBU-12</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>	
+
+<model>
+		<name>right-gbu242</name>
+		<path>Aircraft/FGUK-weapons/Bombs/gbu24/gbu24.xml</path>
+		<offsets>
+			<x-m> 7.25</x-m>
+			<y-m>1.919</y-m>
+			<z-m>0.1</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-gbu242</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>GBU-24</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	
+		<model>
+		<name>right-brimstone3</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone4.xml</path>
+		<offsets>
+			<x-m> 7.0</x-m>
+			<y-m>1.93</y-m>
+			<z-m>-0.5</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-brimstone3</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[7]</property>
+					<value>Brimstone</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[3]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation>
+	
+	<!--station right 3 -->
+	<model>
+		<name>right-aim9-2</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/AIM9.xml</path>
+		<offsets>
+			<x-m> 7.4</x-m>
+			<y-m>2.6</y-m>
+			<z-m>0.26</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-aim9-2</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[8]</property>
+					<value>AIM9L</value>
+				</equals>
+				<!--equals>
+					<property>controls/armament/station[8]/release</property>
+					<value>false</value>
+				</equals-->
+			</and>
+		</condition>
+	</animation>
+
+	<!--station Right 2 -->
+	
+<model>
+		<name>right-droptank1</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/exTank.ac</path>
+		<offsets>
+			<x-m> 7.9</x-m>
+			<y-m>3.25</y-m>
+			<z-m>-0.0525</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-droptank1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[9]</property>
+					<value>R Droptank</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation> 
+
+	<model>
+		<name>right-ferrytank1</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/tank1500.xml</path>
+		<offsets>
+			<x-m> 7.4</x-m>
+			<y-m>3.25</y-m>
+			<z-m>-0.0525</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-ferrytank1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[9]</property>
+					<value>R Ferrytank</value>
+				</equals>
+			
+			</and>
+		</condition>
+	</animation>
+
+	
+	<model>
+		<name>right-bl7551</name>
+		<path>Aircraft/FGUK-weapons/Bombs/bl755/bl755.xml</path>
+		<offsets>
+			<x-m> 7.9</x-m>
+			<y-m>3.3</y-m>
+			<z-m>-0.0525</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-bl7551</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[9]</property>
+					<value>BL755</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+<model>
+		<name>right-mk131</name>
+		<path>Aircraft/FGUK-weapons/Bombs/MK13/mk13.xml</path>
+		<offsets>
+			<x-m> 7.7</x-m>
+			<y-m>3.25</y-m>
+			<z-m>-0.12</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-mk131</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[9]</property>
+					<value>MK13</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>		
+	
+
+<model>
+		<name>right-5001</name>
+		<path>Aircraft/FGUK-weapons/Bombs/mk82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m> 7.7</x-m>
+			<y-m>3.26</y-m>
+			<z-m>0.04</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-5001</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[9]</property>
+					<value>500lb</value>
+				</equals>
+			
+			</and>
+		</condition>
+	</animation>		
+
+	
+<model>
+		<name>right-gbu121</name>
+		<path>Aircraft/FGUK-weapons/Bombs/gbu12/gbu12.xml</path>
+		<offsets>
+			<x-m> 7.9</x-m>
+			<y-m>3.23</y-m>
+			<z-m>-0.04</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			<roll-deg>-20</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-gbu121</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[9]</property>
+					<value>GBU-12</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>		
+
+		<model>
+		<name>right-brimstone2</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone5.xml</path>
+		<offsets>
+			<x-m> 7.4</x-m>
+			<y-m>3.28</y-m>
+			<z-m>-0.6</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-brimstone2</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[9]</property>
+					<value>Brimstone</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+		
+	<!--station right 1 -->
+
+	<model>
+		<name>right-aim9-1</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/AIM9.xml</path>
+		<offsets>
+			<x-m> 7.9</x-m>
+			<y-m>3.98</y-m>
+			<z-m>0.1</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-aim9-1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[10]</property>
+					<value>AIM9L</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+	<model>
+		<name>right-brimstone-1</name>
+		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone6.xml</path>
+		<offsets>
+			<x-m> 8.0</x-m>
+			<y-m>3.99</y-m>
+			<z-m>-0.6</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-brimstone-1</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[10]</property>
+					<value>Brimstone</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+<model>
+		<name>right-500lb-0</name>
+		<path>Aircraft/FGUK-weapons/Bombs/mk82/MK-82-LD.xml</path>
+		<offsets>
+			<x-m> 8.2</x-m>
+			<y-m>3.97</y-m>
+			<z-m>0.03</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-500lb-0</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[10]</property>
+					<value>500lb</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+
+
+	<model>
+		<name>right-gbu12-0</name>
+		<path>Aircraft/FGUK-weapons/Bombs/gbu12/gbu12.xml</path>
+		<offsets>
+			<x-m> 8.2</x-m>
+			<y-m>3.94</y-m>
+			<z-m>-0.06</z-m>
+			<pitch-deg>-0.865</pitch-deg>
+			<roll-deg>-25</roll-deg>
+		</offsets>
+	</model>	
+
+	<animation>
+		<type>select</type>
+		<object-name>right-gbu12-0</object-name>      
+		<condition>
+			<and>
+				<equals>
+					<property>sim/multiplay/generic/string[10]</property>
+					<value>GBU-12</value>
+				</equals>
+				
+			</and>
+		</condition>
+	</animation>
+	
+</PropertyList>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<!-- comms panel -->
+
+<PropertyList>
+
+ <!--  engine panel -->
+ 
+ 
+ 
+   <animation>
+  <type>material</type>
+  <object-name>fuel</object-name>
+  
+  
+  
+  <ambient>
+    <red>1</red>
+    <green>1</green>
+    <blue>1</blue>
+  </ambient>
+  <diffuse>
+    <red>0.8</red>
+    <green>0.8</green>
+    <blue>0.8</blue>
+  </diffuse>
+  <emission>
+    <red>0.3</red>
+    <green>0.3</green>
+    <blue>0.3</blue>
+  </emission> 
+ </animation>
+ 
+  <text>
+  <name>fuel</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.664</x-m>
+     <y-m>0.215</y-m>
+     <z-m>0.417</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%4.2f</format>
+  <truncate type="bool">false</truncate>
+  <property>consumables/fuel/total-fuel-gal_us</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+ 
+
+
+</PropertyList>

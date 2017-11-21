@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+
+<!-- comms panel -->
+
+<PropertyList>
+
+ <!--  Front HUD computer -->
+   <animation>
+  <type>material</type>
+  <object-name>comm1</object-name>
+   <object-name>comm2</object-name>
+   <!-- <object-name>nav1</object-name>
+    <object-name>nav2</object-name>-->
+   <object-name>tacan</object-name>
+  
+  <ambient>
+    <red>0.0</red>
+    <green>1.0</green>
+    <blue>0.0</blue>
+  </ambient>
+  <diffuse>
+    <red>0.0</red>
+    <green>0.1</green>
+    <blue>0.0</blue>
+  </diffuse>
+  <emission>
+    <red>0.3</red>
+    <green>0.8</green>
+    <blue>0.3</blue>
+  </emission> 
+ </animation>
+ 
+  <text>
+  <name>comm1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+   <x-m>-4.558</x-m>
+   <y-m>-0.012</y-m>
+   <z-m>0.962</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%3.3f</format>
+  <truncate type="bool">false</truncate>
+  <property>instrumentation/comm/frequencies/selected-mhz</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+
+ <text>
+  <name>comm2</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+   <x-m>-4.558</x-m>
+   <y-m>0.14</y-m>
+   <z-m>0.964</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%3.3f</format>
+  <truncate type="bool">false</truncate>
+  <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+ 
+<!-- <text>
+  <name>nav1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.007</character-size>
+  <offsets>
+  <x-m>-4.547</x-m>
+   <y-m>0.065</y-m>
+   <z-m>0.936</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%3.3f</format>
+  <truncate type="bool">false</truncate>
+  <property>instrumentation/nav/frequencies/selected-mhz</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+
+ 
+ <text>
+  <name>nav2</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.007</character-size>
+  <offsets>
+   <x-m>-4.542</x-m>
+   <y-m>0.065</y-m>
+   <z-m>0.919</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%3.3f</format>
+  <truncate type="bool">false</truncate>
+  <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+  -->
+ 
+ <text>
+  <name>tacan</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.008</character-size>
+  <offsets>
+   <x-m>-4.552</x-m>
+   <y-m>0.095</y-m>
+   <z-m>1.07</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%3.3f</format>
+  <truncate type="bool">false</truncate>
+  <property>instrumentation/tacan/frequencies/selected-mhz</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text> 
+ 
+
+
+</PropertyList>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>pylons.ac</path>
+    <animation>
+        <object-name>pylon1.L</object-name>
+        <object-name>pylon2.L</object-name>
+        <object-name>pylon3.L</object-name>
+        <object-name>pylon4.L</object-name>
+        <object-name>pylon5.L</object-name>
+        <object-name>pylon.C</object-name>
+        <object-name>pylon5.R</object-name>
+        <object-name>pylon4.R</object-name>
+        <object-name>pylon3.R</object-name>
+        <object-name>pylon2.R</object-name>
+        <object-name>pylon1.R</object-name>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon1.L</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[0]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon2.L</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[1]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon3.L</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[2]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon4.L</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[3]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon5.L</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[4]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon.C</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[5]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon5.R</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[6]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon4.R</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[7]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon3.R</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[8]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon2.R</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[9]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>pylon1.R</object-name>      
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string[10]</property>
+                <value>none</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+</PropertyList>

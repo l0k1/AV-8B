@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>3brimstone.ac</path>
+
+  <animation>
+    <object-name>3 x Brimstone</object-name>
+  </animation>
+  
+  <model>
+		<name>brimstone-11</name>
+		<path>Aircraft/FGUK-weapons/Air-Ground/brimstone/brimstone.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.4</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>	
+
+	
+	<model>
+		<name>brimstone-21</name>
+		<path>Aircraft/FGUK-weapons/Air-Ground/brimstone/brimstone.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.2</y-m>
+			<z-m>0.6</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>brimstone-31</name>
+		<path>Aircraft/FGUK-weapons/Air-Ground/brimstone/brimstone.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.2</y-m>
+			<z-m>0.6</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+</PropertyList>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>asi600.ac</path>
+
+ <animation>
+	 <type>material</type>
+	 <object-name>ASIneedle</object-name>
+	 <object-name>ASIface</object-name>
+	 <emission>
+		 <red>1.0</red>
+		 <green>0.2</green>
+		 <blue>0.0</blue>
+		 <factor-prop>sim/model/material/instruments/factor</factor-prop>
+	 </emission>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>ASIneedle</object-name>
+   <property>velocities/airspeed-kt</property>
+   <interpolation>
+     <entry><ind>  0</ind><dep>    0</dep></entry>
+     <entry><ind> 200</ind><dep>   97</dep></entry>
+     <entry><ind> 300</ind><dep>  157</dep></entry>
+     <entry><ind> 400</ind><dep>  216</dep></entry>
+     <entry><ind> 500</ind><dep>  277</dep></entry>
+     <entry><ind> 600</ind><dep>  336.5</dep></entry>
+   </interpolation>
+   <axis>
+     <x>-1.0</x>
+   </axis>
+ </animation>
+
+</PropertyList>

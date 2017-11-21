@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+
+<!-- comms panel -->
+
+<PropertyList>
+
+ <!--  engine panel -->
+ 
+ 
+ 
+   <animation>
+  <type>material</type>
+  <object-name>duct</object-name>
+   <object-name>rpm</object-name>
+    <object-name>ff</object-name>
+	<object-name>jpt</object-name>
+ <object-name>stab</object-name>
+   
+   <object-name>bingo</object-name>
+  
+  
+  <ambient>
+    <red>0</red>
+    <green>1</green>
+    <blue>0.0</blue>
+  </ambient>
+  <diffuse>
+    <red>0.0</red>
+    <green>0.8</green>
+    <blue>0.0</blue>
+  </diffuse>
+  <emission>
+    <red>0.0</red>
+    <green>0.8</green>
+    <blue>0.3</blue>
+  </emission> 
+ </animation>
+ 
+  <text>
+  <name>duct</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.6522</x-m>
+     <y-m>0.17</y-m>
+     <z-m>0.697</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%3.3f</format>
+  <truncate type="bool">false</truncate>
+  <property>engines/engine/epr</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+ 
+ <text>
+  <name>rpm</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+      <x-m>2.6523</x-m>
+     <y-m>0.222</y-m>
+     <z-m>0.696</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%4.1f</format>
+  <truncate type="bool">false</truncate>
+  <property>engines/engine/rpm</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+ 
+ 
+ <text>
+  <name>ff</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.654</x-m>
+     <y-m>0.17</y-m>
+     <z-m>0.676</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%3.2f</format>
+  <truncate type="bool">false</truncate>
+  <property>engines/engine/fuel-flow-gph</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+ 
+ <text>
+  <name>jpt</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.654</x-m>
+     <y-m>0.222</y-m>
+     <z-m>0.676</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%3.1f</format>
+  <truncate type="bool">false</truncate>
+  <property>engines/engine/egt-degf</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+ 
+ 
+<text>
+  <name>stab</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.654</x-m>
+     <y-m>0.17</y-m>
+     <z-m>0.656</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%1.3f</format>
+  <truncate type="bool">false</truncate>
+  <property>surface-positions/elevator-pos-norm</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>right-top</alignment>
+ </text>
+
+
+
+</PropertyList>

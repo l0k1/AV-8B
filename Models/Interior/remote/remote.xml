@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>remote.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>Needle1</object-name>
+  <object-name>Needle2</object-name>
+  <emission>
+    <factor-prop>sim/model/material/instruments/factor</factor-prop>
+    <red>1.0</red>
+    <green>0.2</green>
+    <blue>0.00</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle1</object-name>
+  <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle2</object-name>
+  <property>instrumentation/magnetic-compass/bookmark-heading-deg</property>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+

@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+
+<!-- comms panel -->
+
+<PropertyList>
+
+ <!--  master warn panel -->
+ 
+ <!-- Unlit -->
+ 
+   <text>
+  <name>CAUTION1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+     <x-m>2.65175</x-m>
+     <y-m>0.103</y-m>
+     <z-m>0.711</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">CAUTION</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ <text>
+  <name>MASTER1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+      <x-m>2.65175</x-m>
+      <y-m>0.105</y-m>
+     <z-m>0.718</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">MASTER</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+
+ <text>
+  <name>fire1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.65265</x-m>
+     <y-m>0.097</y-m>
+     <z-m>0.687</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">FIRE</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+
+ 
+ <text>
+  <name>law1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.65315</x-m>
+     <y-m>0.099</y-m>
+     <z-m>0.6723</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">LAW</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <text>
+  <name>flaps1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.65379</x-m>
+     <y-m>0.097</y-m>
+     <z-m>0.656</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">FLAPS</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+  <text>
+ <name>ltank1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.65445</x-m>
+     <y-m>0.097</y-m>
+     <z-m>0.64</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+   <text type="string">L TANK</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ <text>
+   <name>rtank1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.65645</x-m>
+     <y-m>0.096</y-m>
+     <z-m>0.625</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">R TANK</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <text>
+   <name>hyd1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.6559</x-m>
+     <y-m>0.099</y-m>
+     <z-m>0.6099</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">HYD</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+<text>
+ <name>gear1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.65625</x-m>
+     <y-m>0.099</y-m>
+     <z-m>0.593</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">GEAR</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <text>
+   <name>ot1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.65689</x-m>
+     <y-m>0.102</y-m>
+     <z-m>0.578</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+   <text type="string">OT</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+<text>
+  <name>jptl1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.65765</x-m>
+     <y-m>0.099</y-m>
+     <z-m>0.562</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+ <text type="string">JPTL</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <text>
+  <name>epc1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.6582</x-m>
+     <y-m>0.1</y-m>
+     <z-m>0.545</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">EPC</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+  <text>
+  <name>ben1</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.65875</x-m>
+     <y-m>0.1</y-m>
+     <z-m>0.53</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">BEN</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ 
+ <!-- lit versions -->
+ 
+   <animation>
+  <type>material</type>
+  <object-name>MASTER</object-name>
+   <object-name>CAUTION</object-name>
+    <object-name>fire</object-name>
+	<object-name>flaps</object-name>
+	<object-name>law</object-name>
+ <object-name>ltank</object-name>
+   <object-name>rtank</object-name>
+    <object-name>hyd</object-name>
+   <object-name>gear</object-name>
+  <object-name>ot</object-name>
+   <object-name>jptl</object-name>
+   <object-name>epc</object-name>
+  <object-name>ben</object-name>
+  <ambient>
+    <red>1</red>
+    <green>0</green>
+    <blue>0.0</blue>
+  </ambient>
+  <diffuse>
+    <red>0.8</red>
+    <green>0.0</green>
+    <blue>0.0</blue>
+  </diffuse>
+  <emission>
+    <red>0.8</red>
+    <green>0.0</green>
+    <blue>0.0</blue>
+  </emission> 
+ </animation>
+ <!--
+  <text>
+  <name>CAUTION</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+     <x-m>2.652</x-m>
+     <y-m>0.103</y-m>
+     <z-m>0.711</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">CAUTION</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ 
+ <text>
+  <name>MASTER</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.006</character-size>
+  <offsets>
+      <x-m>2.6518</x-m>
+      <y-m>0.105</y-m>
+     <z-m>0.718</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">MASTER</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ -->
+ <!--
+ <text>
+  <name>fire</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.655</x-m>
+     <y-m>0.097</y-m>
+     <z-m>0.687</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">FIRE</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ -->
+ 
+<!-- <text>
+  <name>law</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.6532</x-m>
+     <y-m>0.099</y-m>
+     <z-m>0.6723</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">LAW</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>-->
+ 
+ <!--
+ <text>
+  <name>flaps</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.6538</x-m>
+     <y-m>0.097</y-m>
+     <z-m>0.656</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">FLAPS</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ -->
+ 
+ <!-- <text>
+ <name>ltank</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.6545</x-m>
+     <y-m>0.097</y-m>
+     <z-m>0.64</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+   <text type="string">L TANK</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>-->
+ 
+ <!--<text>
+   <name>rtank</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.005</character-size>
+  <offsets>
+     <x-m>2.6565</x-m>
+     <y-m>0.096</y-m>
+     <z-m>0.625</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">R TANK</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>-->
+ 
+ 
+ <!--<text>
+   <name>hyd</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.656</x-m>
+     <y-m>0.099</y-m>
+     <z-m>0.6099</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">HYD</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>-->
+ 
+ <!--
+<text>
+ <name>gear</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.6563</x-m>
+     <y-m>0.099</y-m>
+     <z-m>0.593</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">GEAR</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>
+ -->
+ 
+ <!--<text>
+   <name>ot</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0064</character-size>
+  <offsets>
+     <x-m>2.6569</x-m>
+     <y-m>0.102</y-m>
+     <z-m>0.578</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+   <text type="string">OT</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>-->
+ 
+<!--<text>
+  <name>jptl</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.6577</x-m>
+     <y-m>0.099</y-m>
+     <z-m>0.562</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+ <text type="string">JPTL</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>-->
+ 
+ 
+<!-- <text>
+  <name>epc</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.6583</x-m>
+     <y-m>0.1</y-m>
+     <z-m>0.545</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">EPC</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>-->
+ 
+ <!-- <text>
+  <name>ben</name>
+  <font>lcd.txf</font>
+  <character-size type="double">0.0055</character-size>
+  <offsets>
+     <x-m>2.6588</x-m>
+     <y-m>0.1</y-m>
+     <z-m>0.53</z-m>
+   <roll-deg>0</roll-deg>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">literal</type>
+  <text type="string">BEN</text>
+  <draw-text type="bool">true</draw-text>
+  <alignment>left-top</alignment>
+ </text>-->
+
+ 
+ <!-- Animations 	-->
+ <!--  needs clarifyling before it works properly
+ <animation>
+        <type>select</type>
+       <object-name>MASTER</object-name>
+   <object-name>CAUTION</object-name>
+    <object-name>fire</object-name>
+	
+        <condition>
+			
+				<property>sim/failure-manager/engines/engine/serviceable</property>
+						<value>0</value>
+						
+					
+			</condition>
+    </animation>
+
+
+	 <animation>
+        <type>select</type>
+       <object-name>MASTER</object-name>
+   <object-name>CAUTION</object-name>
+    <object-name>flaps</object-name>
+	
+        <condition>
+			<not>
+				<property>sim/failure-manager/controls/flight/flaps/serviceable</property>
+						<value>1</value>
+				</not>	
+					
+			</condition>
+    </animation>
+
+	
+	 <animation>
+        <type>select</type>
+       <object-name>MASTER</object-name>
+   <object-name>CAUTION</object-name>
+    <object-name>gear</object-name>
+	
+        <condition>
+			<not>
+				<property>sim/failure-manager/controls/gear/serviceable</property>
+						<value>1</value>
+				</not>	
+					
+			</condition>
+    </animation>
+ 	 -->
+
+</PropertyList>

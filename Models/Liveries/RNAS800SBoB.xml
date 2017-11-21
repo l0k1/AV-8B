@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">RNAS 800 - Battle of Britain</name>
+				<texture>Liveries/RNAS800SBoB.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/RNAS800SBoB.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>
+

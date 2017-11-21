@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">RAF 4 Sqdn.</name>
+				<texture>Liveries/RAF4S.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/RAF4S.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>
+

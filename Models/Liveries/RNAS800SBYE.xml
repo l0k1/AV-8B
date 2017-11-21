@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">RNAS 800 - Farewell Flight</name>
+				<texture>Liveries/RNAS800SBYE.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/RNAS800SBYE.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>
+
