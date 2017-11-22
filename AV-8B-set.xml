@@ -535,7 +535,7 @@
 	<nasal>
 		<harrier>	<file>Aircraft/AV-8B/Nasal/liveries.nas</file>		</harrier>
 		<hud>		<file>Aircraft/AV-8B/Nasal/hud.nas</file>			</hud>
-		<dialogs>	<file>Aircraft/AV-8B/Nasal/dialogs.nas</file>		</dialogs>
+		<dialog>	<file>Aircraft/AV-8B/Nasal/dialogs.nas</file>		</dialog>
 	</nasal>
 
 </PropertyList>

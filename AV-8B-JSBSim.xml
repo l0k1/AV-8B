@@ -64,8 +64,8 @@
    <htailarm  unit="FT" >    18.53 </htailarm>
    <vtailarea  unit="FT2">   32.29 </vtailarea>
    <vtailarm  unit="FT" >    18.53 </vtailarm>
-   <location name="AERORP" unit="IN">
-     <x>   333.57 </x>
+   <location name="AERORP" unit="M">
+     <x>    0.25 </x>
      <y>     0.00 </y>
      <z>     0.00 </z>
    </location>
@@ -86,14 +86,14 @@
    <iyy unit="SLUG*FT2">  28537.71 </iyy>
    <izz unit="SLUG*FT2">  25514.13 </izz>
    <emptywt unit="LBS" >  13979.70 </emptywt>
-   <location name="CG" unit="IN">
-     <x>   333.57 </x>
+   <location name="CG" unit="M">
+     <x>   -0.2 </x>
      <y>     0.00 </y>
-     <z>   -13.90 </z>
+     <z>   0.00 </z>
    </location>
    <pointmass name="Payload">
     <description> 12002.08 LBS should bring model up to entered max weight </description>
-    <weight unit="LBS"> 6001.04 </weight>
+    <weight unit="LBS"> 0.0 </weight>
     <location name="POINTMASS" unit="IN">
      <x>   333.57 </x>
      <y>     0.00 </y>
@@ -105,8 +105,8 @@
  <propulsion>
 
    <engine file="F402-RR-408">
-    <location unit="IN">
-      <x>   495.94 </x>
+    <location unit="M">
+      <x>   -1.7 </x>
       <y>     0.00 </y>
       <z>     0.00 </z>
     </location>
@@ -119,8 +119,8 @@
 
     <thruster file="direct">
      <sense> 1 </sense>
-     <location unit="IN">
-       <x>   495.94 </x>
+     <location unit="M">
+       <x>     -0.2 </x>
        <y>     0.00 </y>
        <z>     0.00 </z>
      </location>
@@ -133,19 +133,19 @@
   </engine>
 
   <tank type="FUEL" number="0">
-     <location unit="IN">
-       <x>   333.57 </x>
-       <y>     0.00 </y>
-       <z>   -13.90 </z>
+     <location unit="M">
+       <x>   -0.04490 </x>
+       <y>   -1.46810 </y>
+       <z>    1.03963 </z>
      </location>
      <capacity unit="LBS"> 2511.36 </capacity>
      <contents unit="LBS"> 1255.68 </contents>
   </tank>
   <tank type="FUEL" number="1">
-     <location unit="IN">
-       <x>   333.57 </x>
-       <y>     0.00 </y>
-       <z>   -13.90 </z>
+     <location unit="M">
+       <x>   -0.04490 </x>
+       <y>    1.46810 </y>
+       <z>    1.03963 </z>
      </location>
      <capacity unit="LBS"> 2511.36 </capacity>
      <contents unit="LBS"> 1255.68 </contents>
@@ -156,10 +156,10 @@
  <ground_reactions>
 
   <contact type="BOGEY" name="NOSE">
-    <location unit="IN">
-      <x>    72.27 </x>
+    <location unit="M">
+      <x>    -2.59320 </x>
       <y>     0.00 </y>
-      <z>   -66.71 </z>
+      <z>   -1.21176 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -172,10 +172,10 @@
   </contact>
 
   <contact type="BOGEY" name="LEFT_MAIN">
-    <location unit="IN">
-      <x>   346.91 </x>
-      <y>   -32.76 </y>
-      <z>   -66.71 </z>
+    <location unit="M">
+      <x>   1.74963 </x>
+      <y>  -2.57262 </y>
+      <z>  -1.04250 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -188,10 +188,10 @@
   </contact>
 
   <contact type="BOGEY" name="RIGHT_MAIN">
-    <location unit="IN">
-      <x>   346.91 </x>
-      <y>    32.76 </y>
-      <z>   -66.71 </z>
+    <location unit="M">
+      <x>   1.74963 </x>
+      <y>   2.57262 </y>
+      <z>  -1.04250 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -203,7 +203,7 @@
     <retractable> 1 </retractable>
   </contact>
 
-  <contact type="STRUCTURE" name="LEFT_WING">
+  <!--<contact type="STRUCTURE" name="LEFT_WING">
     <location unit="IN">
      <x>   333.57 </x>
      <y>  -181.99 </y>
@@ -225,7 +225,7 @@
    <dynamic_friction> 1 </dynamic_friction>
    <spring_coeff unit="LBS/FT">      31004.50 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC"> 31004.50 </damping_coeff>
-  </contact>
+  </contact>-->
 
  </ground_reactions>
 
@@ -450,7 +450,7 @@
 
   <axis name="SIDE">
 
-    <function name="aero/force/Side_beta">
+    <!--<function name="aero/force/Side_beta">
        <description>Side force due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -501,13 +501,13 @@
            <value> 0.1975 </value>
            <property>tune/side/rudder</property>
        </product>
-    </function>
+    </function>-->
 
   </axis>
 
   <axis name="PITCH">
 
-    <function name="aero/moment/Pitch_alpha">
+    <!--<function name="aero/moment/Pitch_alpha">
        <description>Pitch moment due to alpha</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -517,7 +517,7 @@
            <value> -0.6930 </value>
            <property>tune/pitch/alpha</property>
        </product>
-    </function>
+    </function>-->
 
     <function name="aero/moment/Pitch_elevator">
        <description>Pitch moment due to elevator</description>
@@ -537,7 +537,7 @@
        </product>
     </function>
 
-    <function name="aero/moment/Pitch_damp">
+    <!--<function name="aero/moment/Pitch_damp">
        <description>Pitch moment due to pitch rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -561,13 +561,13 @@
            <value> -5.1177 </value>
            <property>tune/pitch/alphadot</property>
        </product>
-    </function>
+    </function>-->
 
   </axis>
 
   <axis name="ROLL">
 
-    <function name="aero/moment/Roll_beta">
+    <!--<function name="aero/moment/Roll_beta">
        <description>Roll moment due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -619,7 +619,7 @@
            </table>
            <property>tune/roll/yaw</property>
        </product>
-    </function>
+    </function>-->
 
     <function name="aero/moment/Roll_aileron">
        <description>Roll moment due to aileron</description>
@@ -639,7 +639,7 @@
        </product>
     </function>
 
-    <function name="aero/moment/Roll_rudder">
+    <!--<function name="aero/moment/Roll_rudder">
        <description>Roll moment due to rudder</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -649,14 +649,14 @@
            <value> 0.0100 </value>
            <property>tune/roll/rudder</property>
        </product>
-    </function>
+    </function>-->
 
   </axis>
 
   <axis name="YAW">
 
     <!-- Stall initiator -->
-    <function name="aero/moment/Yaw_alpha">
+    <!--<function name="aero/moment/Yaw_alpha">
        <description>Yaw moment due to alpha</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -721,7 +721,7 @@
            <value> -0.3077 </value>
            <property>tune/yaw/damp</property>
        </product>
-    </function>
+    </function>-->
 
     <function name="aero/moment/Yaw_rudder">
        <description>Yaw moment due to rudder</description>
@@ -730,7 +730,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>fcs/rudder-pos-rad</property>
-           <value> -0.1206 </value>
+           <value> -0.01206 </value>
            <property>tune/yaw/rudder</property>
        </product>
     </function>
