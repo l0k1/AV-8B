@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<system name="Vectored Thrust">
+	<channel name="Primary Outlets">
+
+		<kinematic name="trash/fcs/nozzle-pos-deg">
+			<input>fcs/nozzle-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>  0.0 </position>
+					<time>      0.0 </time>
+				</setting>
+				<setting>
+					<position>  1.0 </position>
+					<time>      1.5 </time>
+				</setting>
+			</traverse>
+			<output>fcs/nozzle-pos-norm</output>
+		</kinematic>
+
+		<!-- need to change nozzle pos for:
+		/fdm/jsbsim/external_reactions/propulsion/front-left-vant
+												./front-right-vent
+												./rear-left-vent
+												./rear-right-vent
+		where
+		./x -> forward (1 full forward, 0 null)
+		./z -> down (-1 thrust down, 0 null)
+		-->
+
+		<!-- front left -->
+
+		<fcs_function name="trash/external_reactions/propulsion/front-left-vent/x">
+			<function>
+				<!--(x - 1) * -1-->
+				<product>
+					<difference>
+						<property>fcs/nozzle-pos-norm</property>
+						<value>1</value>
+					</difference>
+					<value>-1</value>
+				</product>
+			</function>
+			<output>external_reactions/propulsion/front-left-vent/x</output>
+		</fcs_function>
+
+		<fcs_function name="trash/external_reactions/propulsion/front-left-vent/z">
+			<function>
+				<product>
+					<property>fcs/nozzle-pos-norm</property>
+					<value>-1</value>
+				</product>
+			</function>
+			<output>external_reactions/propulsion/front-left-vent/z</output>
+		</fcs_function>
+
+		<!-- front right -->
+
+		<fcs_function name="trash/external_reactions/propulsion/front-right-vent/x">
+			<function>
+				<!--(x - 1) * -1-->
+				<product>
+					<difference>
+						<property>fcs/nozzle-pos-norm</property>
+						<value>1</value>
+					</difference>
+					<value>-1</value>
+				</product>
+			</function>
+			<output>external_reactions/propulsion/front-right-vent/x</output>
+		</fcs_function>
+
+		<fcs_function name="trash/external_reactions/propulsion/front-right-vent/z">
+			<function>
+				<product>
+					<property>fcs/nozzle-pos-norm</property>
+					<value>-1</value>
+				</product>
+			</function>
+			<output>external_reactions/propulsion/front-right-vent/z</output>
+		</fcs_function>
+
+		<!-- rear left -->
+
+		<fcs_function name="trash/external_reactions/propulsion/rear-left-vent/x">
+			<function>
+				<!--(x - 1) * -1-->
+				<product>
+					<difference>
+						<property>fcs/nozzle-pos-norm</property>
+						<value>1</value>
+					</difference>
+					<value>-1</value>
+				</product>
+			</function>
+			<output>external_reactions/propulsion/rear-left-vent/x</output>
+		</fcs_function>
+
+		<fcs_function name="trash/external_reactions/propulsion/rear-left-vent/z">
+			<function>
+				<product>
+					<property>fcs/nozzle-pos-norm</property>
+					<value>-1</value>
+				</product>
+			</function>
+			<output>external_reactions/propulsion/rear-left-vent/z</output>
+		</fcs_function>
+
+		<!-- rear right -->
+
+		<fcs_function name="trash/external_reactions/propulsion/rear-right-vent/x">
+			<function>
+				<!--(x - 1) * -1-->
+				<product>
+					<difference>
+						<property>fcs/nozzle-pos-norm</property>
+						<value>1</value>
+					</difference>
+					<value>-1</value>
+				</product>
+			</function>
+			<output>external_reactions/propulsion/rear-right-vent/x</output>
+		</fcs_function>
+
+		<fcs_function name="trash/external_reactions/propulsion/rear-right-vent/z">
+			<function>
+				<product>
+					<property>fcs/nozzle-pos-norm</property>
+					<value>-1</value>
+				</product>
+			</function>
+			<output>external_reactions/propulsion/rear-right-vent/z</output>
+		</fcs_function>
+
+	</channel>
+
+	
+</system>

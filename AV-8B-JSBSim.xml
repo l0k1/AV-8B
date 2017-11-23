@@ -65,9 +65,9 @@
    <vtailarea  unit="FT2">   32.29 </vtailarea>
    <vtailarm  unit="FT" >    18.53 </vtailarm>
    <location name="AERORP" unit="M">
-     <x>    0.25 </x>
+     <x>    -0.22 </x>
      <y>     0.00 </y>
-     <z>     0.00 </z>
+     <z>     0.80 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
      <x>   111.19 </x>
@@ -83,13 +83,13 @@
 
  <mass_balance>
    <ixx unit="SLUG*FT2">   7279.36 </ixx>
-   <iyy unit="SLUG*FT2">  28537.71 </iyy>
+   <iyy unit="SLUG*FT2">  38537.71 </iyy>
    <izz unit="SLUG*FT2">  25514.13 </izz>
    <emptywt unit="LBS" >  13979.70 </emptywt>
    <location name="CG" unit="M">
-     <x>   -0.2 </x>
-     <y>     0.00 </y>
-     <z>   0.00 </z>
+     <x>  -0.24 </x>
+     <y>   0.00 </y>
+     <z>   0.50 </z>
    </location>
    <pointmass name="Payload">
     <description> 12002.08 LBS should bring model up to entered max weight </description>
@@ -108,7 +108,7 @@
     <location unit="M">
       <x>   -1.7 </x>
       <y>     0.00 </y>
-      <z>     0.00 </z>
+      <z>     0.485 </z>
     </location>
     <orient unit="DEG">
       <pitch>     0.00 </pitch>
@@ -116,13 +116,14 @@
         <yaw>     0.00 </yaw>
     </orient>
     <feed> 0 </feed>
+    <feed> 1 </feed>
 
     <thruster file="direct">
      <sense> 1 </sense>
      <location unit="M">
        <x>     -0.2 </x>
        <y>     0.00 </y>
-       <z>     0.00 </z>
+       <z>     0.485 </z>
      </location>
      <orient unit="DEG">
        <pitch>     0.00 </pitch>
@@ -164,8 +165,8 @@
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
-    <spring_coeff  unit="LBS/FT">     9301.35 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC"> 4650.68 </damping_coeff>
+    <spring_coeff  unit="LBS/FT">     31004.35 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC"> 15502.68 </damping_coeff>
     <max_steer unit="DEG"> 5.00 </max_steer>
     <brake_group> NONE </brake_group>
     <retractable> 1 </retractable>
@@ -175,7 +176,7 @@
     <location unit="M">
       <x>   1.74963 </x>
       <y>  -2.57262 </y>
-      <z>  -1.04250 </z>
+      <z>  -0.79880 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -191,7 +192,7 @@
     <location unit="M">
       <x>   1.74963 </x>
       <y>   2.57262 </y>
-      <z>  -1.04250 </z>
+      <z>  -0.79880 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
@@ -233,6 +234,7 @@
  <system file="Landing Gear.xml"/>
  <system file="Flaps.xml"/>
  <system file="Speedbrake.xml"/>
+ <system file="nozzle_control.xml"/>
 
  <flight_control name="FCS: AV-8B">
 
@@ -240,32 +242,104 @@
 
  <aerodynamics>
 
+  <function name="aero/Vj">
+    <description>Jet Velocity Ratio</description>
+    <pow>
+      <quotient>
+        <product>
+          <value>13</value>
+          <property>aero/qbar-psf</property>
+        </product>
+        <property>propulsion/engine[0]/thrust-lbs</property>
+      </quotient>
+      <value>0.5</value>
+    </pow>
+  </function>
+
+  <function name="aero/k">
+    <description>Not sure but NASA thought it was important</description>
+    <quotient>
+      <difference>
+        <property>aero/Vj</property>
+        <value>0.05</value>
+      </difference>
+      <value>0.05</value>
+    </quotient>
+  </function>
+
+  <function name="aero/alpha-rad-corr">
+    <description>Alpha corrected with Vj</description>
+    <documentation>
+      if vj greater than or equal to 0.1 then alpha = alpha
+      if vj is between 0.05 and 0.1 then alpha = pitch + (alpha - pitch) * k
+      if vj less than or equal to 0.05 then alpha = pitch
+    </documentation>
+    <ifthen>
+      <ge>
+        <property>aero/Vj</property>
+        <value>0.1</value>
+      </ge>
+      <property>aero/alpha-rad</property>
+      <ifthen>
+        <le>
+          <property>aero/Vj</property>
+          <value>0.05</value>
+        </le>
+        <property>attitude/pitch-rad</property>
+        <sum>
+          <property>attitude/pitch-rad</property>
+          <product>
+            <difference>
+              <property>aero/alpha-rad</property>
+              <property>attitude/pitch-rad</property>
+            </difference>
+            <property>aero/k</property>
+          </product>
+        </sum>
+      </ifthen>
+    </ifthen>
+  </function>
+
+  <function name="aero/alpha-20">
+    <description>alpha-corr divided by 20</description>
+    <quotient>
+      <todegrees>
+        <property>aero/alpha-rad-corr</property>
+      </todegrees>
+      <value>20</value>
+    </quotient>
+  </function>
+
+
   <axis name="LIFT">
 
     <!-- Lift above 0.85 and below -0.85 is generalised -->
+    <!-- -5 to 25 degrees from https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19880003981.pdf -->
     <function name="aero/force/Lift_alpha">
       <description>Lift due to alpha</description>
       <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
-          <table>
-            <independentVar lookup="row">aero/alpha-rad</independentVar>
-            <tableData>
-              -4.36 -3.7390
-              -1.57  0.0000
-              -1.51 -1.4956
-              -1.22 -0.6198
-              -1.05 -0.8351
-              -0.88 -0.9643
-               0.00  0.9865
-               0.60  2.4821
-               0.88  1.0357
-               1.05  0.8969
-               1.22  0.6658
-               1.57  0.0000
-               3.45  4.7255
-            </tableData>
-          </table>
+          <sum>
+            <product>
+              <value>-0.456</value>
+              <pow>
+                <property>aero/alpha-20</property>
+                <value>3</value>
+              </pow>
+            </product>
+            <product>
+              <value>0.307</value>
+              <pow>
+                <property>aero/alpha-20</property>
+                <value>2</value>
+              </pow>
+            </product>
+            <product>
+              <value>1.465</value>
+              <property>aero/alpha-20</property>
+            </product>
+          </sum>
           <property>tune/lift/alpha</property>
       </product>
     </function>
@@ -316,6 +390,50 @@
        </product>
     </function>
 
+    <function name="aero/force/Lift_mach">
+       <description>Lift due to mach</description>
+        <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <product>
+            <value>0.179</value>
+            <pow>
+              <property>velocities/mach</property>
+              <value>4</value>
+            </pow>
+          </product>
+        </product>
+    </function>
+
+    <function name="aero/force/Lift_mach_alpha">
+       <description>Lift due to mach * alpha</description>
+        <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <sum>
+            <product>
+              <product>
+                <value>0.638</value>
+                <pow>
+                  <property>velocities/mach</property>
+                  <value>4</value>
+                </pow>
+              </product>
+              <property>aero/alpha-20</property>
+            </product>
+            <product>
+              <product>
+                <value>-0.698</value>
+                <pow>
+                  <property>velocities/mach</property>
+                  <value>2</value>
+                </pow>
+              </product>
+              <property>aero/alpha-20</property>
+            </product>
+          </sum>
+        </product>
+    </function>
 
   </axis>
 
@@ -329,7 +447,7 @@
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
-          <value> 0.0133 </value>
+          <value> 0.03 </value>
           <property>tune/drag/minimum</property>
        </product>
     </function>
@@ -339,16 +457,26 @@
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
-          <table>
-            <independentVar lookup="row">aero/alpha-rad</independentVar>
-            <tableData>
-             -3.45    0.6602
-             -1.57    1.4093
-              0.00    0.0000
-              1.57    1.4093
-              3.45    0.6602
-            </tableData>
-          </table>
+          <sum>
+            <product>
+              <value>0.171</value>
+              <pow>
+                <property>aero/alpha-20</property>
+                <value>3</value>
+              </pow>
+            </product>
+            <product>
+              <value>0.168</value>
+              <pow>
+                <property>aero/alpha-20</property>
+                <value>2</value>
+              </pow>
+            </product>
+            <product>
+              <value>-0.147</value>
+              <property>aero/alpha-20</property>
+            </product>
+          </sum>
           <property>tune/drag/alpha</property>
        </product>
     </function>
@@ -369,16 +497,53 @@
         <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
-          <table>
-            <independentVar lookup="row">velocities/mach</independentVar>
-            <tableData>
-                0.00    0.0000
-                0.81    0.0000
-                1.10    0.0230
-                1.80    0.0150
-            </tableData>
-          </table>
+          <sum>
+            <product>
+              <value>0.174</value>
+              <pow>
+                <property>velocities/mach</property>
+                <value>4</value>
+              </pow>
+            </product>
+            <product>
+              <value>-0.116</value>
+              <pow>
+                <property>velocities/mach</property>
+                <value>2</value>
+              </pow>
+            </product>
+          </sum>
           <property>tune/drag/mach</property>
+        </product>
+    </function>
+
+    <function name="aero/force/Drag_mach_alpha">
+       <description>Drag due to mach * alpha</description>
+        <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <sum>
+            <product>
+              <product>
+                <value>-0.596</value>
+                <pow>
+                  <property>velocities/mach</property>
+                  <value>4</value>
+                </pow>
+              </product>
+              <property>aero/alpha-20</property>
+            </product>
+            <product>
+              <product>
+                <value>0.649</value>
+                <pow>
+                  <property>velocities/mach</property>
+                  <value>2</value>
+                </pow>
+              </product>
+              <property>aero/alpha-20</property>
+            </product>
+          </sum>
         </product>
     </function>
 
@@ -434,7 +599,6 @@
          </product>
     </function>
 
-
     <function name="aero/force/Drag_speedbrake">
        <description>Drag due to speedbrakes</description>
          <product>
@@ -450,7 +614,7 @@
 
   <axis name="SIDE">
 
-    <!--<function name="aero/force/Side_beta">
+    <function name="aero/force/Side_beta">
        <description>Side force due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -501,23 +665,41 @@
            <value> 0.1975 </value>
            <property>tune/side/rudder</property>
        </product>
-    </function>-->
+    </function>
 
   </axis>
 
   <axis name="PITCH">
 
-    <!--<function name="aero/moment/Pitch_alpha">
+    <function name="aero/moment/Pitch_alpha">
        <description>Pitch moment due to alpha</description>
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
-           <property>aero/alpha-rad</property>
-           <value> -0.6930 </value>
+           <sum>
+            <product>
+              <value>-0.197</value>
+              <pow>
+                <property>aero/alpha-20</property>
+                <value>3</value>
+              </pow>
+            </product>
+            <product>
+              <value>0.133</value>
+              <pow>
+                <property>aero/alpha-20</property>
+                <value>2</value>
+              </pow>
+            </product>
+            <product>
+              <value>-0.315</value>
+              <property>aero/alpha-20</property>
+            </product>
+          </sum>
            <property>tune/pitch/alpha</property>
        </product>
-    </function>-->
+    </function>
 
     <function name="aero/moment/Pitch_elevator">
        <description>Pitch moment due to elevator</description>
@@ -529,15 +711,15 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    -1.1563
-              2.0    -0.2891
+              0.0    -1.35
+              2.0    -0.30
             </tableData>
           </table>
           <property>tune/pitch/elevator</property>
        </product>
     </function>
 
-    <!--<function name="aero/moment/Pitch_damp">
+    <function name="aero/moment/Pitch_damp">
        <description>Pitch moment due to pitch rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -545,7 +727,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
-           <value> -7.6753 </value>
+           <value> -14.6753 </value>
            <property>tune/pitch/damp</property>
        </product>
     </function>
@@ -561,13 +743,47 @@
            <value> -5.1177 </value>
            <property>tune/pitch/alphadot</property>
        </product>
-    </function>-->
+    </function>
+
+    <function name="aero/moment/Pitch_mach">
+       <description>Pitch due to mach</description>
+        <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <product>
+            <value>0.053</value>
+            <pow>
+              <property>velocities/mach</property>
+              <value>4</value>
+            </pow>
+          </product>
+          <property>tune/drag/mach</property>
+        </product>
+    </function>
+
+    <function name="aero/moment/Pitch_mach_alpha">
+       <description>Pitch due to mach * alpha</description>
+        <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <product>
+            <product>
+              <value>-0.169</value>
+              <pow>
+                <property>velocities/mach</property>
+                <value>4</value>
+              </pow>
+            </product>
+            <property>aero/alpha-20</property>
+          </product>
+        </product>
+    </function>
 
   </axis>
 
   <axis name="ROLL">
 
-    <!--<function name="aero/moment/Roll_beta">
+    <function name="aero/moment/Roll_beta">
        <description>Roll moment due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -583,6 +799,7 @@
                   0.3491 -11.8091  -0.8679  -0.3194  -0.1831
              </tableData>
            </table>
+           <value>0.1</value>
            <property>tune/roll/beta</property>
        </product>
     </function>
@@ -595,7 +812,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/p-aero-rad_sec</property>
-           <value> -0.1119 </value>
+           <value> -0.2519 </value>
            <property>tune/roll/damp</property>
        </product>
     </function>
@@ -609,17 +826,17 @@
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
            <table>
-             <independentVar lookup="row">aero/alpha-rad</independentVar>
+             <independentVar lookup="row">aero/alpha-rad-corr</independentVar>
              <independentVar lookup="column">aero/Re</independentVar>
              <tableData>
                           8639072  9502980 12958609 17308920
                  -0.0349   0.2110   0.2110   0.2110   0.2110
-                  0.3491  11.7876   0.9638   0.4138   0.3151
+                  0.3491  6.7876   0.9638   0.4138   0.3151
              </tableData>
            </table>
            <property>tune/roll/yaw</property>
        </product>
-    </function>-->
+    </function>
 
     <function name="aero/moment/Roll_aileron">
        <description>Roll moment due to aileron</description>
@@ -639,7 +856,7 @@
        </product>
     </function>
 
-    <!--<function name="aero/moment/Roll_rudder">
+    <function name="aero/moment/Roll_rudder">
        <description>Roll moment due to rudder</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -649,14 +866,14 @@
            <value> 0.0100 </value>
            <property>tune/roll/rudder</property>
        </product>
-    </function>-->
+    </function>
 
   </axis>
 
   <axis name="YAW">
 
     <!-- Stall initiator -->
-    <!--<function name="aero/moment/Yaw_alpha">
+    <function name="aero/moment/Yaw_alpha">
        <description>Yaw moment due to alpha</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -673,6 +890,7 @@
                   0.3491   1.0000   0.0000
              </tableData>
            </table>
+           <value>0.2</value>
            <property>tune/yaw/alpha</property>
        </product>
     </function>
@@ -684,7 +902,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
-           <value> 0.1907 </value>
+           <value> 0.0057 </value>
            <property>tune/yaw/beta</property>
        </product>
     </function>
@@ -700,7 +918,7 @@
            <table>
              <independentVar lookup="row">aero/Re</independentVar>
              <tableData>
-                 8639072  -0.5308
+                 8639072  -0.1308
                  9502980  -0.0445
                 12958609  -0.0198
                 17308920  -0.0111
@@ -721,7 +939,7 @@
            <value> -0.3077 </value>
            <property>tune/yaw/damp</property>
        </product>
-    </function>-->
+    </function>
 
     <function name="aero/moment/Yaw_rudder">
        <description>Yaw moment due to rudder</description>
@@ -752,6 +970,412 @@
  </aerodynamics>
 
  <external_reactions>
+
+  <!-- countering the main engines thrust to redistribute it later -->
+
+  <force name="propulsion/nullify" frame="BODY">
+    <function>
+      <product>
+        <property>propulsion/engine[0]/thrust-lbs</property>
+        <value>-1</value>
+      </product>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>     -0.2 </x>
+     <y>     0.00 </y>
+     <z>     0.485 </z>
+    </location>
+    <direction>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </direction>
+  </force>
+
+  <!-- the four main nozzles -->
+  <!-- does not account for the RCS nozzles yet -->
+
+  <force name="propulsion/front-left-vent" frame="BODY">
+    <function>
+      <quotient>
+        <property>propulsion/engine[0]/thrust-lbs</property>
+        <value>4</value>
+      </quotient>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x> -1.40992 </x>
+     <y> -1.06075 </y>
+     <z>  0.44870 </z>
+    </location>
+    <direction>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </direction>
+  </force>
+
+  <force name="propulsion/front-right-vent" frame="BODY">
+    <function>
+      <quotient>
+        <property>propulsion/engine[0]/thrust-lbs</property>
+        <value>4</value>
+      </quotient>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x> -1.40992 </x>
+     <y>  1.06075 </y>
+     <z>  0.44870 </z>
+    </location>
+    <direction>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </direction>
+  </force>
+
+  <force name="propulsion/rear-left-vent" frame="BODY">
+    <function>
+      <quotient>
+        <property>propulsion/engine[0]/thrust-lbs</property>
+        <value>4</value>
+      </quotient>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  0.70349 </x>
+     <y> -0.77735 </y>
+     <z>  0.47649 </z>
+    </location>
+    <direction>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </direction>
+  </force>
+
+  <force name="propulsion/rear-right-vent" frame="BODY">
+    <function>
+      <quotient>
+        <property>propulsion/engine[0]/thrust-lbs</property>
+        <value>4</value>
+      </quotient>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  0.70349 </x>
+     <y>  0.77735 </y>
+     <z>  0.47649 </z>
+    </location>
+    <direction>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </direction>
+  </force>
+
+  <!-- the 8 reaction control system nozzles -->
+
+  <!-- pitch -->
+
+  <force name="propulsion/pitch-front" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and elevator is negative, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      <ifthen>
+        <and>
+          <gt>
+            <property>fcs/nozzle-pos-norm</property>
+            <value>0.4</value>
+          </gt>
+          <lt>
+            <property>fcs/elevator-cmd-norm</property>
+            <value>0</value>
+          </lt>
+        </and>
+        <product>
+          <abs>
+            <property>fcs/elevator-cmd-norm</property>
+          </abs>
+          <value>1000</value> <!-- this is the max thrust force -->
+        </product>
+        <value>0</value>
+      </ifthen>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x> -7.07022 </x>
+     <y>  0.00000 </y>
+     <z> -0.06504 </z>
+    </location>
+    <direction>
+      <x>0</x>
+      <y>0</y>
+      <z>-1</z>
+    </direction>
+  </force>
+
+  <force name="propulsion/pitch-rear" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and elevator is positive, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      <ifthen>
+        <and>
+          <gt>
+            <property>fcs/nozzle-pos-norm</property>
+            <value>0.4</value>
+          </gt>
+          <gt>
+            <property>fcs/elevator-cmd-norm</property>
+            <value>0</value>
+          </gt>
+        </and>
+        <product>
+          <abs>
+            <property>fcs/elevator-cmd-norm</property>
+          </abs>
+          <value>1000</value> <!-- this is the max thrust force -->
+        </product>
+        <value>0</value>
+      </ifthen>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  6.82453 </x>
+     <y>  0.00000 </y>
+     <z>  1.05262 </z>
+    </location>
+    <direction>
+      <x>0</x>
+      <y>0</y>
+      <z>-1</z>
+    </direction>
+  </force>
+
+  <!-- yaw -->
+
+  <force name="propulsion/yaw-left" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and rudder is negative, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      <ifthen>
+        <and>
+          <gt>
+            <property>fcs/nozzle-pos-norm</property>
+            <value>0.4</value>
+          </gt>
+          <lt>
+            <property>fcs/rudder-cmd-norm</property>
+            <value>0</value>
+          </lt>
+        </and>
+        <product>
+          <abs>
+            <property>fcs/rudder-cmd-norm</property>
+          </abs>
+          <value>1000</value> <!-- this is the max thrust force -->
+        </product>
+        <value>0</value>
+      </ifthen>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  6.80444 </x>
+     <y> -0.15463 </y>
+     <z>  1.24735 </z>
+    </location>
+    <direction>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </direction>
+  </force>
+
+  <force name="propulsion/yaw-right" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and rudder is negative, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      <ifthen>
+        <and>
+          <gt>
+            <property>fcs/nozzle-pos-norm</property>
+            <value>0.4</value>
+          </gt>
+          <gt>
+            <property>fcs/rudder-cmd-norm</property>
+            <value>0</value>
+          </gt>
+        </and>
+        <product>
+          <abs>
+            <property>fcs/rudder-cmd-norm</property>
+          </abs>
+          <value>1000</value> <!-- this is the max thrust force -->
+        </product>
+        <value>0</value>
+      </ifthen>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  6.80444 </x>
+     <y>  0.15463 </y>
+     <z>  1.24735 </z>
+    </location>
+    <direction>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </direction>
+  </force>
+
+  <!-- roll -->
+
+  <!-- roll left -->
+
+  <force name="propulsion/roll-left-top" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and aileron is positive, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      <ifthen>
+        <and>
+          <gt>
+            <property>fcs/nozzle-pos-norm</property>
+            <value>0.4</value>
+          </gt>
+          <lt>
+            <property>fcs/aileron-cmd-norm</property>
+            <value>0</value>
+          </lt>
+        </and>
+        <product>
+          <abs>
+            <property>fcs/aileron-cmd-norm</property>
+          </abs>
+          <value>500</value> <!-- this is the max thrust force -->
+        </product>
+        <value>0</value>
+      </ifthen>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  1.96449 </x>
+     <y> -4.57522 </y>
+     <z>  0.30817 </z>
+    </location>
+    <direction>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </direction>
+  </force>
+
+  <force name="propulsion/roll-right-bottom" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and aileron is positive, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      <ifthen>
+        <and>
+          <gt>
+            <property>fcs/nozzle-pos-norm</property>
+            <value>0.4</value>
+          </gt>
+          <lt>
+            <property>fcs/aileron-cmd-norm</property>
+            <value>0</value>
+          </lt>
+        </and>
+        <product>
+          <abs>
+            <property>fcs/aileron-cmd-norm</property>
+          </abs>
+          <value>500</value> <!-- this is the max thrust force -->
+        </product>
+        <value>0</value>
+      </ifthen>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  1.96449 </x>
+     <y>  4.57522 </y>
+     <z>  0.27047 </z>
+    </location>
+    <direction>
+      <x>0</x>
+      <y>0</y>
+      <z>-1</z>
+    </direction>
+  </force>
+
+  <!-- roll right -->
+
+  <force name="propulsion/roll-right-top" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and aileron is negative, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      <ifthen>
+        <and>
+          <gt>
+            <property>fcs/nozzle-pos-norm</property>
+            <value>0.4</value>
+          </gt>
+          <gt>
+            <property>fcs/aileron-cmd-norm</property>
+            <value>0</value>
+          </gt>
+        </and>
+        <product>
+          <abs>
+            <property>fcs/aileron-cmd-norm</property>
+          </abs>
+          <value>500</value> <!-- this is the max thrust force -->
+        </product>
+        <value>0</value>
+      </ifthen>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  1.96449 </x>
+     <y>  4.57522 </y>
+     <z>  0.30817 </z>
+    </location>
+    <direction>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </direction>
+  </force>
+
+  <force name="propulsion/roll-left-bottom" frame="BODY">
+    <function>
+      <!-- if nozzle > 0.4/36 deg and aileron is positive, thrust = abs(elevator) * 1000, else thrust = 0 -->
+      <ifthen>
+        <and>
+          <gt>
+            <property>fcs/nozzle-pos-norm</property>
+            <value>0.4</value>
+          </gt>
+          <gt>
+            <property>fcs/aileron-cmd-norm</property>
+            <value>0</value>
+          </gt>
+        </and>
+        <product>
+          <abs>
+            <property>fcs/aileron-cmd-norm</property>
+          </abs>
+          <value>500</value> <!-- this is the max thrust force -->
+        </product>
+        <value>0</value>
+      </ifthen>
+    </function>
+    <!-- location needs to be the same as the engine thruster -->
+    <location unit="M">
+     <x>  1.96449 </x>
+     <y> -4.57522 </y>
+     <z>  0.27047 </z>
+    </location>
+    <direction>
+      <x>0</x>
+      <y>0</y>
+      <z>-1</z>
+    </direction>
+  </force>
+
  </external_reactions>
 
 </fdm_config>
