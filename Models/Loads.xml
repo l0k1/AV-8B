@@ -3,7 +3,7 @@
 <PropertyList>
 
 	<model>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/pylons.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/pylons.xml</path>
 	</model>	
 
 	<!--station left 1 -->
@@ -11,7 +11,7 @@
 	
 	<model>
 		<name>left-aim9-1</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/AIM9.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/AIM9.xml</path>
 		<offsets>
 			<x-m> 7.9</x-m>
 			<y-m>-3.95</y-m>
@@ -36,7 +36,7 @@
 
 	<model>
 		<name>left-brimstone-1</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone1.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/brimstone1.xml</path>
 		<offsets>
 			<x-m> 8.0</x-m>
 			<y-m>-3.95</y-m>
@@ -118,7 +118,7 @@
 
 <model>
 		<name>left-droptank1</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/exTank.ac</path>
+		<path>Aircraft/AV-8B/Models/Weapons/exTank.ac</path>
 		<offsets>
 			<x-m> 7.9</x-m>
 			<y-m>-3.25</y-m>
@@ -144,7 +144,7 @@
 
 	<model>
 		<name>left-ferrytank1</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/tank1500.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/tank1500.xml</path>
 		<offsets>
 			<x-m> 7.4</x-m>
 			<y-m>-3.25</y-m>
@@ -275,7 +275,7 @@
 	
 	<model>
 		<name>left-brimstone2</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone2.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/brimstone2.xml</path>
 		<offsets>
 			<x-m> 7.4</x-m>
 			<y-m>-3.25</y-m>
@@ -302,7 +302,7 @@
 	<!--station left 3 -->
 	<model>
 		<name>left-aim9-2</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/AIM9.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/AIM9.xml</path>
 		<offsets>
 			<x-m> 7.4</x-m>
 			<y-m>-2.56</y-m>
@@ -332,7 +332,7 @@
 
 	<model>
 		<name>left-droptank</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/exTank.ac</path>
+		<path>Aircraft/AV-8B/Models/Weapons/exTank.ac</path>
 		<offsets>
 			<x-m> 7.1862</x-m>
 			<y-m>-1.9207</y-m>
@@ -357,7 +357,7 @@
 
 	<model>
 		<name>left-ferrytank</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/tank1500.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/tank1500.xml</path>
 		<offsets>
 			<x-m> 7.2504</x-m>
 			<y-m>-1.9214</y-m>
@@ -514,7 +514,7 @@
 	
 	<model>
 		<name>left-brimstone3</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone3.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/brimstone3.xml</path>
 		<offsets>
 			<x-m> 7.0</x-m>
 			<y-m>-1.9</y-m>
@@ -543,7 +543,7 @@
 	<!--station left 5 -->
 	<model>
 		<name>left-fin</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/fin.ac</path>
+		<path>Aircraft/AV-8B/Models/Weapons/fin.ac</path>
 		<offsets>
 			<x-m>-0.7</x-m>
 			<y-m>-0.5</y-m>
@@ -573,7 +573,7 @@
 	<!-- centre station  -->
 	<model>
 		<name>centre</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/Camera.ac</path>
+		<path>Aircraft/AV-8B/Models/Weapons/Camera.ac</path>
 		<offsets>
 			<x-m> 6.7302</x-m>
 			<y-m> 0.0000</y-m>
@@ -603,7 +603,7 @@
 	<!--station right 5 -->
 	<model>
 		<name>right-fin</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/fin.ac</path>
+		<path>Aircraft/AV-8B/Models/Weapons/fin.ac</path>
 		<offsets>
 			<x-m>-0.7</x-m>
 			<y-m>0.5</y-m>
@@ -634,7 +634,7 @@
 
 	<model>
 		<name>right-droptank</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/exTank.ac</path>
+		<path>Aircraft/AV-8B/Models/Weapons/exTank.ac</path>
 		<offsets>
 			<x-m> 7.1862</x-m>
 			<y-m> 1.9207</y-m>
@@ -659,7 +659,7 @@
 
 	<model>
 		<name>right-ferrytank</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/tank1500.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/tank1500.xml</path>
 		<offsets>
 			<x-m> 7.2504</x-m>
 			<y-m> 1.9214</y-m>
@@ -814,7 +814,7 @@
 	
 		<model>
 		<name>right-brimstone3</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone4.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/brimstone4.xml</path>
 		<offsets>
 			<x-m> 7.0</x-m>
 			<y-m>1.93</y-m>
@@ -843,7 +843,7 @@
 	<!--station right 3 -->
 	<model>
 		<name>right-aim9-2</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/AIM9.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/AIM9.xml</path>
 		<offsets>
 			<x-m> 7.4</x-m>
 			<y-m>2.6</y-m>
@@ -873,7 +873,7 @@
 	
 <model>
 		<name>right-droptank1</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/exTank.ac</path>
+		<path>Aircraft/AV-8B/Models/Weapons/exTank.ac</path>
 		<offsets>
 			<x-m> 7.9</x-m>
 			<y-m>3.25</y-m>
@@ -898,7 +898,7 @@
 
 	<model>
 		<name>right-ferrytank1</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/tank1500.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/tank1500.xml</path>
 		<offsets>
 			<x-m> 7.4</x-m>
 			<y-m>3.25</y-m>
@@ -1027,7 +1027,7 @@
 
 		<model>
 		<name>right-brimstone2</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone5.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/brimstone5.xml</path>
 		<offsets>
 			<x-m> 7.4</x-m>
 			<y-m>3.28</y-m>
@@ -1055,7 +1055,7 @@
 
 	<model>
 		<name>right-aim9-1</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/AIM9.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/AIM9.xml</path>
 		<offsets>
 			<x-m> 7.9</x-m>
 			<y-m>3.98</y-m>
@@ -1080,7 +1080,7 @@
 
 	<model>
 		<name>right-brimstone-1</name>
-		<path>Aircraft/Harrier-GR9/Models/Weapons/brimstone6.xml</path>
+		<path>Aircraft/AV-8B/Models/Weapons/brimstone6.xml</path>
 		<offsets>
 			<x-m> 8.0</x-m>
 			<y-m>3.99</y-m>

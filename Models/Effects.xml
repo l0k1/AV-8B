@@ -3,7 +3,7 @@
 <PropertyList>
 
     <model>
-        <path>Aircraft/Harrier-GR9/Models/Effects/Tiptrail/Tiptrail.xml</path>
+        <path>Aircraft/AV-8B/Models/Effects/Tiptrail/Tiptrail.xml</path>
         <offsets>
             <x-m> 8.2</x-m>
             <y-m>-4.6</y-m>
@@ -12,7 +12,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Harrier-GR9/Models/Effects/Tiptrail/Tiptrail.xml</path>
+        <path>Aircraft/AV-8B/Models/Effects/Tiptrail/Tiptrail.xml</path>
         <offsets>
             <x-m>8.2</x-m>
             <y-m>4.6</y-m>
@@ -30,7 +30,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Harrier-GR9/Models/Effects/Smoke/SmokeRight.xml</path>
+        <path>Aircraft/AV-8B/Models/Effects/Smoke/SmokeRight.xml</path>
         <offsets>
             <x-m> 6.000</x-m>
             <y-m> 0.883</y-m>
@@ -39,7 +39,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Harrier-GR9/Models/Effects/Trail/TrailLeft.xml</path>
+        <path>Aircraft/AV-8B/Models/Effects/Trail/TrailLeft.xml</path>
         <offsets>
             <x-m> 6.000</x-m>
             <y-m>-0.883</y-m>
@@ -48,7 +48,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Harrier-GR9/Models/Effects/Trail/TrailRight.xml</path>
+        <path>Aircraft/AV-8B/Models/Effects/Trail/TrailRight.xml</path>
         <offsets>
             <x-m>6.000</x-m>
             <y-m>0.883</y-m>
@@ -58,7 +58,7 @@
 
     <model>
         <name>WashLeft</name>
-        <path>Aircraft/Harrier-GR9/Models/Effects/Wash/Wash.xml</path>
+        <path>Aircraft/AV-8B/Models/Effects/Wash/Wash.xml</path>
         <condition>
             <equals>
                 <property>controls/state/low_level</property>
@@ -75,7 +75,7 @@
 
     <model>
         <name>WashRight</name>
-        <path>Aircraft/Harrier-GR9/Models/Effects/Wash/Wash.xml</path>
+        <path>Aircraft/AV-8B/Models/Effects/Wash/Wash.xml</path>
         <condition>
             <equals>
                 <property>controls/state/low_level</property>
@@ -119,7 +119,7 @@
     </animation>
 
     <model>
-        <path>Aircraft/Harrier-GR9/Models/Effects/FX/FX2.xml</path>
+        <path>Aircraft/AV-8B/Models/Effects/FX/FX2.xml</path>
         <offsets>
             <x-m>0</x-m>
             <y-m>0</y-m>

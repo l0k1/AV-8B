@@ -19,7 +19,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Needle</object-name>
-  <property>controls/engines/engine/mixture[0]</property>
+  <property>/fdm/jsbsim/fcs/nozzle-pos-norm</property>
   <factor>-100</factor>
   <offset-deg>190</offset-deg>
   <axis>

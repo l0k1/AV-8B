@@ -32,7 +32,7 @@
     </animation>	
  
 	<model>
-		<path>Aircraft/Harrier-GR9/Models/Interior/hud.ac</path>
+		<path>Aircraft/AV-8B/Models/Interior/hud.ac</path>
 		<offsets>
 			<x-m> 2.64</x-m>
 			<y-m> -0.024</y-m>

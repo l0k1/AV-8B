@@ -4,7 +4,7 @@
 <PropertyList>
 
 	<name>Harrier Panel Hotspots</name>
-	<background>Aircraft/Harrier-GR9/Models/Interior/transparent-bg.rgb</background>
+	<background>Aircraft/AV-8B/Models/Interior/transparent-bg.rgb</background>
 
 	<w>1024</w>
 	<h>768</h>
@@ -24,7 +24,7 @@
 				<layer>
 					<name>background</name>
 					<texture>
-						<path>Aircraft/Harrier-GR9/Models/Interior/transparent-bg.rgb</path>
+						<path>Aircraft/AV-8B/Models/Interior/transparent-bg.rgb</path>
 						<x1>0.0</x1>
 						<y1>0.0</y1>
 						<x2>1.0</x2>

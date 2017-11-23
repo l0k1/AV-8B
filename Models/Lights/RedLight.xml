@@ -4,12 +4,12 @@
 
   <model>
     <name>RedLightFlare</name>
-    <path>Aircraft/Harrier-GR9/Models/Lights/Flares/RedLight-flare.xml</path>
+    <path>Aircraft/AV-8B/Models/Lights/Flares/RedLight-flare.xml</path>
   </model>
 
   <model>
     <name>RedLightRemb</name>
-    <path>Aircraft/Harrier-GR9/Models/Lights/Rembrandt/RedLight-remb.xml</path>
+    <path>Aircraft/AV-8B/Models/Lights/Rembrandt/RedLight-remb.xml</path>
   </model>
 
   <animation>
