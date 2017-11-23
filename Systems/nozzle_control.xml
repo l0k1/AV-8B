@@ -25,30 +25,35 @@
 		where
 		./x -> forward (1 full forward, 0 null)
 		./z -> down (-1 thrust down, 0 null)
+
+		nozzles have 98.5* of movement
 		-->
 
 		<!-- front left -->
 
 		<fcs_function name="trash/external_reactions/propulsion/front-left-vent/x">
 			<function>
-				<!--(x - 1) * -1-->
-				<product>
-					<difference>
-						<property>fcs/nozzle-pos-norm</property>
-						<value>1</value>
-					</difference>
-					<value>-1</value>
-				</product>
+				<table>
+					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
+					<tableData>
+						0.0    1.0
+						1.0    -0.094
+					</tableData>
+				</table>
 			</function>
 			<output>external_reactions/propulsion/front-left-vent/x</output>
 		</fcs_function>
 
 		<fcs_function name="trash/external_reactions/propulsion/front-left-vent/z">
 			<function>
-				<product>
-					<property>fcs/nozzle-pos-norm</property>
-					<value>-1</value>
-				</product>
+				<table>
+					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
+					<tableData>
+						0.0    0.0
+						0.9137 1.0
+						1.0    0.9055
+					</tableData>
+				</table>
 			</function>
 			<output>external_reactions/propulsion/front-left-vent/z</output>
 		</fcs_function>
@@ -57,24 +62,27 @@
 
 		<fcs_function name="trash/external_reactions/propulsion/front-right-vent/x">
 			<function>
-				<!--(x - 1) * -1-->
-				<product>
-					<difference>
-						<property>fcs/nozzle-pos-norm</property>
-						<value>1</value>
-					</difference>
-					<value>-1</value>
-				</product>
+				<table>
+					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
+					<tableData>
+						0.0    1.0
+						1.0    -0.094
+					</tableData>
+				</table>
 			</function>
 			<output>external_reactions/propulsion/front-right-vent/x</output>
 		</fcs_function>
 
 		<fcs_function name="trash/external_reactions/propulsion/front-right-vent/z">
 			<function>
-				<product>
-					<property>fcs/nozzle-pos-norm</property>
-					<value>-1</value>
-				</product>
+				<table>
+					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
+					<tableData>
+						0.0    0.0
+						0.9137 1.0
+						1.0    0.9055
+					</tableData>
+				</table>
 			</function>
 			<output>external_reactions/propulsion/front-right-vent/z</output>
 		</fcs_function>
@@ -83,24 +91,27 @@
 
 		<fcs_function name="trash/external_reactions/propulsion/rear-left-vent/x">
 			<function>
-				<!--(x - 1) * -1-->
-				<product>
-					<difference>
-						<property>fcs/nozzle-pos-norm</property>
-						<value>1</value>
-					</difference>
-					<value>-1</value>
-				</product>
+				<table>
+					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
+					<tableData>
+						0.0    1.0
+						1.0    -0.094
+					</tableData>
+				</table>
 			</function>
 			<output>external_reactions/propulsion/rear-left-vent/x</output>
 		</fcs_function>
 
 		<fcs_function name="trash/external_reactions/propulsion/rear-left-vent/z">
 			<function>
-				<product>
-					<property>fcs/nozzle-pos-norm</property>
-					<value>-1</value>
-				</product>
+				<table>
+					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
+					<tableData>
+						0.0    0.0
+						0.9137 1.0
+						1.0    0.9055
+					</tableData>
+				</table>
 			</function>
 			<output>external_reactions/propulsion/rear-left-vent/z</output>
 		</fcs_function>
@@ -109,24 +120,27 @@
 
 		<fcs_function name="trash/external_reactions/propulsion/rear-right-vent/x">
 			<function>
-				<!--(x - 1) * -1-->
-				<product>
-					<difference>
-						<property>fcs/nozzle-pos-norm</property>
-						<value>1</value>
-					</difference>
-					<value>-1</value>
-				</product>
+				<table>
+					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
+					<tableData>
+						0.0    1.0
+						1.0    -0.094
+					</tableData>
+				</table>
 			</function>
 			<output>external_reactions/propulsion/rear-right-vent/x</output>
 		</fcs_function>
 
 		<fcs_function name="trash/external_reactions/propulsion/rear-right-vent/z">
 			<function>
-				<product>
-					<property>fcs/nozzle-pos-norm</property>
-					<value>-1</value>
-				</product>
+				<table>
+					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
+					<tableData>
+						0.0    0.0
+						0.9137 1.0
+						1.0    0.9055
+					</tableData>
+				</table>
 			</function>
 			<output>external_reactions/propulsion/rear-right-vent/z</output>
 		</fcs_function>
