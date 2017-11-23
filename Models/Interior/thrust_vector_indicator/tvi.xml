@@ -20,8 +20,8 @@
   <type>rotate</type>
   <object-name>Needle</object-name>
   <property>/fdm/jsbsim/fcs/nozzle-pos-norm</property>
-  <factor>-100</factor>
-  <offset-deg>190</offset-deg>
+  <factor>98.5</factor>
+  <offset-deg>90</offset-deg>
   <axis>
    <x>-1</x>
    <y>0</y>

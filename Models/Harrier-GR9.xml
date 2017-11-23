@@ -677,8 +677,8 @@
 		<type>rotate</type>
 		<object-name>FrontNozzles</object-name>
 		<property>/fdm/jsbsim/fcs/nozzle-pos-norm</property>
-		<factor>-100</factor>
-		<offset-deg>98</offset-deg>
+		<factor>98.5</factor>
+		<offset-deg>0</offset-deg>
 		<center>
 			<x-m>-1.3984</x-m>
 			<y-m>0.8256</y-m>
@@ -695,8 +695,8 @@
 		<type>rotate</type>
 		<object-name>BackNozzles</object-name>
 		<property>/fdm/jsbsim/fcs/nozzle-pos-norm</property>
-		<factor>-100</factor>
-		<offset-deg>98</offset-deg>
+		<factor>98.5</factor>
+		<offset-deg>0</offset-deg>
 		<center>
 			<x-m>0.7163</x-m>
 			<y-m>0.5651</y-m>
