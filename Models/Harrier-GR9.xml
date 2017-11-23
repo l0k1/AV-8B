@@ -11,7 +11,7 @@
 		<usage>interior</usage>
 		<path>Aircraft/AV-8B/Models/Interior/Panel.xml</path>
 		<offsets>
-			<x-m>-7.1097</x-m>
+			<x-m>-7.4597</x-m>
 			<y-m>0</y-m>
 			<z-m>0.35</z-m>
 
@@ -32,7 +32,7 @@
  -->
 	<!-- Pilot -->
 
-	<!--<model>
+	<model>
 		<object-name>Pilot</object-name>
 		<path>Aircraft/AV-8B/Models/HDpilot1/pilot.xml</path>
 		<offsets>
@@ -41,7 +41,7 @@
 			<z-m>0.7626</z-m>
 			<pitch-deg>6.0</pitch-deg>
 		</offsets>
-	</model>-->
+	</model>
 
 	<!-- Parts invisible from internally -->
 
@@ -90,9 +90,9 @@
 	  var float_9 = self.getNode("sim/multiplay/generic/float[9]", 1);-->
 
 	 var FuelHose_door = self.getNode("sim/model/FuelHose-positions/FuelHose/position-norm", 1);
-	 var frontnoz = self.getNode("controls/engines/engine/mixture", 1);
-	<!-- var backnoz = self.getNode("controls/engines/engine/mixture", 1);
-	 var inlet = self.getNode("controls/engines/engine/mixture", 1);-->
+	 var frontnoz = self.getNode("/fdm/jsbsim/fcs/nozzle-pos-norm", 1);
+	<!-- var backnoz = self.getNode("/fdm/jsbsim/fcs/nozzle-pos-norm", 1);
+	 var inlet = self.getNode("/fdm/jsbsim/fcs/nozzle-pos-norm", 1);-->
 	 FuelHose_door.alias(float_6);
 	 frontnoz.alias(float_7);
 	<!-- backnoz.alias(float_8);
@@ -676,7 +676,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>FrontNozzles</object-name>
-		<property>controls/engines/engine/mixture</property>
+		<property>/fdm/jsbsim/fcs/nozzle-pos-norm</property>
 		<factor>-100</factor>
 		<offset-deg>98</offset-deg>
 		<center>
@@ -694,7 +694,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>BackNozzles</object-name>
-		<property>controls/engines/engine/mixture</property>
+		<property>/fdm/jsbsim/fcs/nozzle-pos-norm</property>
 		<factor>-100</factor>
 		<offset-deg>98</offset-deg>
 		<center>
@@ -716,7 +716,7 @@
 		<object-name>InletFlaps</object-name>
 		<condition>
 			<greater-than>
-				<property>controls/engines/engine/mixture</property>
+				<property>/fdm/jsbsim/fcs/nozzle-pos-norm</property>
 				<value>0.7</value>
 			</greater-than>
 		</condition>

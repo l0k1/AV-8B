@@ -93,8 +93,8 @@
 			<internal archive="y">true</internal>
 			<config>
 				<x-offset-m archive="y">0</x-offset-m>
-				<y-offset-m archive="y">1.23</y-offset-m>
-				<z-offset-m archive="y">-3.9</z-offset-m>
+				<y-offset-m archive="y">1.21</y-offset-m>
+				<z-offset-m archive="y">-4.31</z-offset-m>
 				<pitch-offset-deg archive="y">-11</pitch-offset-deg>
 				<default-field-of-view-deg> 86.3 </default-field-of-view-deg>
 			</config>
@@ -108,7 +108,7 @@
 				<from-model-idx type="int">0</from-model-idx>
 				<x-offset-m archive="y">0</x-offset-m>
 				<y-offset-m archive="y">1.23</y-offset-m>
-				<z-offset-m archive="y">-4.4</z-offset-m>
+				<z-offset-m archive="y">-4.77</z-offset-m>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>180</heading-offset-deg>
 				<default-field-of-view-deg>110</default-field-of-view-deg>
@@ -121,9 +121,9 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<x-offset-m archive="y">0.3</x-offset-m>
+				<x-offset-m archive="y">0.29</x-offset-m>
 				<y-offset-m archive="y">1.23</y-offset-m>
-				<z-offset-m archive="y">-3.7</z-offset-m>
+				<z-offset-m archive="y">-3.9</z-offset-m>
 				<pitch-offset-deg>-3</pitch-offset-deg>
 				<heading-offset-deg>10</heading-offset-deg>
 				<default-field-of-view-deg>65</default-field-of-view-deg>
@@ -169,7 +169,7 @@
 				<float n="4" alias="/gear/gear[1]/spray-density"/>
 				<float n="5" alias="/gear/gear[2]/spray-density"/>
 				<float n="6" alias="/sim/model/FuelHose-positions/FuelHose/position-norm" /> <!-- fuel hose over MP -->
-				<float n="7" alias="/controls/engines/engine/mixture" /> <!-- vectored nozel over mp -->
+				<float n="7" alias="/fdm/jsbsim/fcs/nozzle-pos-norm" /> <!-- vectored nozel over mp -->
 				<!--<float alias="controls/engines/engine/mixture" n="8"/> vectored nozel over mp -->
 				<!--<float alias="controls/engines/engine/mixture" n="9"/>  Aux inlet over mp -->
 
@@ -371,6 +371,9 @@
 
 	<fdm>
 		<jsbsim>
+			<fcs>
+				<nozzle-cmd-norm type="double">0</nozzle-cmd-norm>
+			</fcs>
 			<!-- for in-flight FDM tuning -->
 			<tune>
 				<lift>
@@ -464,6 +467,34 @@
 
 	<input> 
 		<keyboard>
+			<key n="109">
+				<name>m</name>
+				<desc>Nozzle Decrease</desc>
+				<repeatable>true</repeatable>
+				<interval-sec>0.01</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>/fdm/jsbsim/fcs/nozzle-cmd-norm</property>
+					<step>-0.02</step>
+					<min>0</min>
+					<max>1</max>
+					<wrap>false</wrap>
+				</binding>
+			</key>
+			<key n="77">
+				<name>M</name>
+				<desc>Nozzle Increase</desc>
+				<repeatable>true</repeatable>
+				<interval-sec>0.01</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>/fdm/jsbsim/fcs/nozzle-cmd-norm</property>
+					<step>0.02</step>
+					<min>0</min>
+					<max>1</max>
+					<wrap>false</wrap>
+				</binding>
+			</key>
 		</keyboard>
 	</input>
 
