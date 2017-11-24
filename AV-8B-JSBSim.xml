@@ -87,7 +87,7 @@
    <izz unit="SLUG*FT2">  25514.13 </izz>
    <emptywt unit="LBS" >  13979.70 </emptywt>
    <location name="CG" unit="M">
-     <x>  -0.24 </x>
+     <x>  -0.32 </x>
      <y>   0.00 </y>
      <z>   0.50 </z>
    </location>
@@ -250,7 +250,10 @@
           <value>13</value>
           <property>aero/qbar-psf</property>
         </product>
-        <property>propulsion/engine[0]/thrust-lbs</property>
+        <max>
+          <property>propulsion/engine[0]/thrust-lbs</property>
+          <value>1</value>
+        </max>
       </quotient>
       <value>0.5</value>
     </pow>
@@ -308,6 +311,13 @@
       </todegrees>
       <value>20</value>
     </quotient>
+  </function>
+
+  <function name="aero/beta-deg1">
+    <description></description>
+    <todegrees>
+      <property>aero/beta-rad</property>
+    </todegrees>
   </function>
 
 
@@ -614,7 +624,7 @@
 
   <axis name="SIDE">
 
-    <function name="aero/force/Side_beta">
+    <!--<function name="aero/force/Side_beta">
        <description>Side force due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -623,8 +633,8 @@
            <value> -0.6496 </value>
            <property>tune/side/beta</property>
        </product>
-    </function>
-    <function name="aero/force/Side_roll_rate">
+    </function>-->
+    <!--<function name="aero/force/Side_roll_rate">
        <description>Side force due to roll rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -642,9 +652,9 @@
            </table>
            <property>tune/side/roll_rate</property>
        </product>
-    </function>
+    </function>-->
 
-    <function name="aero/force/Side_yaw_rate">
+    <!--<function name="aero/force/Side_yaw_rate">
        <description>Side force due to yaw rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -654,9 +664,9 @@
            <value> 0.7938 </value>
            <property>tune/side/yaw_rate</property>
        </product>
-    </function>
+    </function>-->
 
-    <function name="aero/force/Side_rudder">
+    <!--<function name="aero/force/Side_rudder">
        <description>Side force due to rudder</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -665,7 +675,7 @@
            <value> 0.1975 </value>
            <property>tune/side/rudder</property>
        </product>
-    </function>
+    </function>-->
 
   </axis>
 
@@ -783,7 +793,7 @@
 
   <axis name="ROLL">
 
-    <function name="aero/moment/Roll_beta">
+    <!--<function name="aero/moment/Roll_beta">
        <description>Roll moment due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -802,7 +812,7 @@
            <value>0.1</value>
            <property>tune/roll/beta</property>
        </product>
-    </function>
+    </function>-->
 
     <function name="aero/moment/Roll_damp">
        <description>Roll moment due to roll rate</description>
@@ -817,7 +827,7 @@
        </product>
     </function>
 
-    <function name="aero/moment/Roll_yaw">
+    <!--<function name="aero/moment/Roll_yaw">
        <description>Roll moment due to yaw rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -836,7 +846,7 @@
            </table>
            <property>tune/roll/yaw</property>
        </product>
-    </function>
+    </function>-->
 
     <function name="aero/moment/Roll_aileron">
        <description>Roll moment due to aileron</description>
@@ -873,7 +883,7 @@
   <axis name="YAW">
 
     <!-- Stall initiator -->
-    <function name="aero/moment/Yaw_alpha">
+    <!--<function name="aero/moment/Yaw_alpha">
        <description>Yaw moment due to alpha</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -893,9 +903,9 @@
            <value>0.2</value>
            <property>tune/yaw/alpha</property>
        </product>
-    </function>
+    </function>-->
 
-    <function name="aero/moment/Yaw_beta">
+    <!--<function name="aero/moment/Yaw_beta">
        <description>Yaw moment due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -905,9 +915,9 @@
            <value> 0.0057 </value>
            <property>tune/yaw/beta</property>
        </product>
-    </function>
+    </function>-->
 
-    <function name="aero/moment/Yaw_roll_rate">
+    <!--<function name="aero/moment/Yaw_roll_rate">
        <description>Yaw moment due to roll rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -926,7 +936,7 @@
            </table>
            <property>tune/yaw/roll_rate</property>
        </product>
-    </function>
+    </function>-->
 
     <function name="aero/moment/Yaw_damp">
        <description>Yaw moment due to yaw rate</description>

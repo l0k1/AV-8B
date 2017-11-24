@@ -50,8 +50,8 @@
 					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
 					<tableData>
 						0.0    0.0
-						0.9137 1.0
-						1.0    0.9055
+						0.9137 -1.0
+						1.0    -0.9055
 					</tableData>
 				</table>
 			</function>
@@ -79,8 +79,8 @@
 					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
 					<tableData>
 						0.0    0.0
-						0.9137 1.0
-						1.0    0.9055
+						0.9137 -1.0
+						1.0    -0.9055
 					</tableData>
 				</table>
 			</function>
@@ -108,8 +108,8 @@
 					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
 					<tableData>
 						0.0    0.0
-						0.9137 1.0
-						1.0    0.9055
+						0.9137 -1.0
+						1.0    -0.9055
 					</tableData>
 				</table>
 			</function>
@@ -137,8 +137,8 @@
 					<independentVar lookup="row">fcs/nozzle-pos-norm</independentVar>
 					<tableData>
 						0.0    0.0
-						0.9137 1.0
-						1.0    0.9055
+						0.9137 -1.0
+						1.0    -0.9055
 					</tableData>
 				</table>
 			</function>
