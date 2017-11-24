@@ -793,7 +793,7 @@
 
   <axis name="ROLL">
 
-    <!--<function name="aero/moment/Roll_beta">
+    <function name="aero/moment/Roll_beta">
        <description>Roll moment due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -801,7 +801,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
            <table>
-             <independentVar lookup="row">aero/alpha-rad</independentVar>
+             <independentVar lookup="row">aero/alpha-rad-corr</independentVar>
              <independentVar lookup="column">aero/Re</independentVar>
              <tableData>
                           8639072  9502980 12958609 17308920
@@ -809,10 +809,10 @@
                   0.3491 -11.8091  -0.8679  -0.3194  -0.1831
              </tableData>
            </table>
-           <value>0.1</value>
+           <value>0.15</value>
            <property>tune/roll/beta</property>
        </product>
-    </function>-->
+    </function>
 
     <function name="aero/moment/Roll_damp">
        <description>Roll moment due to roll rate</description>
@@ -883,7 +883,7 @@
   <axis name="YAW">
 
     <!-- Stall initiator -->
-    <!--<function name="aero/moment/Yaw_alpha">
+    <function name="aero/moment/Yaw_alpha">
        <description>Yaw moment due to alpha</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -903,19 +903,19 @@
            <value>0.2</value>
            <property>tune/yaw/alpha</property>
        </product>
-    </function>-->
+    </function>
 
-    <!--<function name="aero/moment/Yaw_beta">
+    <function name="aero/moment/Yaw_beta">
        <description>Yaw moment due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
-           <value> 0.0057 </value>
+           <value> 0.0450 </value>
            <property>tune/yaw/beta</property>
        </product>
-    </function>-->
+    </function>
 
     <!--<function name="aero/moment/Yaw_roll_rate">
        <description>Yaw moment due to roll rate</description>
@@ -946,7 +946,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
-           <value> -0.3077 </value>
+           <value> -0.3577 </value>
            <property>tune/yaw/damp</property>
        </product>
     </function>
@@ -958,7 +958,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>fcs/rudder-pos-rad</property>
-           <value> -0.01206 </value>
+           <value> -0.02206 </value>
            <property>tune/yaw/rudder</property>
        </product>
     </function>
