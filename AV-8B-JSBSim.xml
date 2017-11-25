@@ -220,29 +220,122 @@
     <retractable> 1 </retractable>
   </contact>
 
-  <!--<contact type="STRUCTURE" name="LEFT_WING">
-    <location unit="IN">
-     <x>   333.57 </x>
-     <y>  -181.99 </y>
-     <z>   -13.90 </z>
+  <contact type="STRUCTURE" name="NOSE">
+    <location unit="M">
+     <x> -7.17586 </x>
+     <y> 0.0 </y>
+     <z> -0.07131 </z>
     </location>
-   <static_friction>  1 </static_friction>
-   <dynamic_friction> 1 </dynamic_friction>
-   <spring_coeff unit="LBS/FT">      31004.50 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC"> 31004.50 </damping_coeff>
-  </contact>
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
 
-  <contact type="STRUCTURE" name="RIGHT_WING">
-    <location unit="IN">
-     <x>   333.57 </x>
-     <y>   181.99 </y>
-     <z>   -13.90 </z>
+ <contact type="STRUCTURE" name="CANOPY">
+    <location unit="M">
+     <x> -3.32944 </x>
+     <y> 0.0 </y>
+     <z> 1.51199 </z>
     </location>
-   <static_friction>  1 </static_friction>
-   <dynamic_friction> 1 </dynamic_friction>
-   <spring_coeff unit="LBS/FT">      31004.50 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC"> 31004.50 </damping_coeff>
-  </contact>-->
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
+
+ <contact type="STRUCTURE" name="VSTAB">
+    <location unit="M">
+     <x> 6.11430 </x>
+     <y> 0.0 </y>
+     <z> 3.2065 </z>
+    </location>
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
+
+ <contact type="STRUCTURE" name="REARDOME">
+    <location unit="M">
+     <x> 7.15513 </x>
+     <y> 0.0 </y>
+     <z> 1.23088 </z>
+    </location>
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
+
+ <contact type="STRUCTURE" name="FIN">
+    <location unit="M">
+     <x> 5.74485 </x>
+     <y> 0.0 </y>
+     <z> 0.0744 </z>
+    </location>
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
+
+ <contact type="STRUCTURE" name="RHSTAB">
+    <location unit="M">
+     <x> 6.55149 </x>
+     <y> 2.14685 </y>
+     <z> 0.75465 </z>
+    </location>
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
+
+ <contact type="STRUCTURE" name="LHSTAB">
+    <location unit="M">
+     <x> 6.55149 </x>
+     <y> -2.14685 </y>
+     <z> 0.75465 </z>
+    </location>
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
+
+ <contact type="STRUCTURE" name="RWING">
+    <location unit="M">
+     <x> 1.99859 </x>
+     <y> 4.6023 </y>
+     <z> 0.24470 </z>
+    </location>
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
+
+ <contact type="STRUCTURE" name="LWING">
+    <location unit="M">
+     <x> 1.99859 </x>
+     <y> -4.6023 </y>
+     <z> 0.24470 </z>
+    </location>
+      <static_friction> 5.0 </static_friction>
+      <dynamic_friction> 4.0 </dynamic_friction>
+      <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+      <damping_coeff_rebound unit="LBS/FT/SEC"> 25000 </damping_coeff_rebound>
+ </contact>
 
  </ground_reactions>
 
