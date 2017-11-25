@@ -1152,7 +1152,7 @@
 	<!-- Compression -->
 
 	<animation>
-		<type>rotate</type>
+		<type>translate</type>
 		<object-name>FrontTire</object-name>
 		<object-name>FrontLowerStrut</object-name>
 		<property>gear/gear[0]/compression-norm[0]</property>
@@ -1162,16 +1162,8 @@
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>0.33</ind>
-				<dep>11</dep>
-			</entry>
-			<entry>
-				<ind>0.66</ind>
-				<dep>22</dep>
-			</entry>
-			<entry>
 				<ind>1.0</ind>
-				<dep>34</dep>
+				<dep>0.3048</dep>
 			</entry>
 			<offset-deg>0</offset-deg>
 		</interpolation>
@@ -1182,8 +1174,8 @@
 		</center>
 		<axis>
 			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
+			<y>0</y>
+			<z>1</z>
 		</axis>
 	</animation>
 
@@ -1199,16 +1191,8 @@
 				<dep>0.0</dep>
 			</entry>
 			<entry>
-				<ind>0.33</ind>
-				<dep>0.075</dep>
-			</entry>
-			<entry>
-				<ind>0.66</ind>
-				<dep>0.13</dep>
-			</entry>
-			<entry>
 				<ind>1.0</ind>
-				<dep>0.24</dep>
+				<dep>0.3048</dep>
 			</entry>
 			<offset-deg>0</offset-deg>
 		</interpolation>
@@ -1229,16 +1213,16 @@
 		<object-name>LeftGear</object-name>
 		<object-name>LeftTire</object-name>
 		<property>gear/gear[2]/compression-norm[0]</property>
-		<factor>0.063</factor>
+		<factor>0.3048</factor>
 		<center>
 			<x-m> 1.7543</x-m>
 			<y-m>-2.5706</y-m>
 			<z-m>-0.0627</z-m>
 		</center>
 		<axis>
-			<x>1</x>
+			<x>0</x>
 			<y>0</y>
-			<z>0</z>
+			<z>1</z>
 		</axis>
 	</animation>
 
@@ -1247,7 +1231,7 @@
 		<object-name>RightGear</object-name>
 		<object-name>RightTire</object-name>
 		<property>gear/gear[3]/compression-norm[0]</property>
-		<factor>0.063</factor>
+		<factor>0.3048</factor>
 		<center>
 			<x-m> 1.7543</x-m>
 			<y-m> 2.5706</y-m>

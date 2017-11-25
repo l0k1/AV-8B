@@ -156,51 +156,67 @@
 
  <ground_reactions>
 
-  <contact type="BOGEY" name="NOSE">
+  <contact type="BOGEY" name="FORE">
     <location unit="M">
-      <x>    -2.59320 </x>
+      <x>    -2.56772 </x>
       <y>     0.00 </y>
-      <z>   -1.21176 </z>
+      <z>   -1.53999 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
-    <spring_coeff  unit="LBS/FT">     31004.35 </spring_coeff>
+    <spring_coeff  unit="LBS/FT">     24004.35 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC"> 15502.68 </damping_coeff>
-    <max_steer unit="DEG"> 5.00 </max_steer>
-    <brake_group> NONE </brake_group>
-    <retractable> 1 </retractable>
-  </contact>
-
-  <contact type="BOGEY" name="LEFT_MAIN">
-    <location unit="M">
-      <x>   1.74963 </x>
-      <y>  -2.57262 </y>
-      <z>  -0.79880 </z>
-    </location>
-    <static_friction>  0.80 </static_friction>
-    <dynamic_friction> 0.50 </dynamic_friction>
-    <rolling_friction> 0.02 </rolling_friction>
-    <spring_coeff  unit="LBS/FT">     31004.50 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC"> 15502.25 </damping_coeff>
-    <max_steer unit="DEG">0</max_steer>
+    <max_steer unit="DEG"> 20.00 </max_steer>
     <brake_group> LEFT </brake_group>
     <retractable> 1 </retractable>
   </contact>
 
-  <contact type="BOGEY" name="RIGHT_MAIN">
+  <contact type="BOGEY" name="AFT">
     <location unit="M">
-      <x>   1.74963 </x>
-      <y>   2.57262 </y>
-      <z>  -0.79880 </z>
+      <x>    0.1.02659 </x>
+      <y>     0.00 </y>
+      <z>   -1.11956 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
-    <spring_coeff  unit="LBS/FT">     31004.50 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC"> 15502.25 </damping_coeff>
-    <max_steer unit="DEG">0</max_steer>
+    <spring_coeff  unit="LBS/FT">     10000.35 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC"> 5000.68 </damping_coeff>
+    <max_steer unit="DEG"> 0.00 </max_steer>
     <brake_group> RIGHT </brake_group>
+    <retractable> 1 </retractable>
+  </contact>
+
+  <contact type="BOGEY" name="LEFT_OUTBOARD">
+    <location unit="M">
+      <x>   1.76525 </x>
+      <y>  -2.57263 </y>
+      <z>  -1.03168 </z>
+    </location>
+    <static_friction>  0.80 </static_friction>
+    <dynamic_friction> 0.50 </dynamic_friction>
+    <rolling_friction> 0.02 </rolling_friction>
+    <spring_coeff  unit="LBS/FT">     10000.50 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC"> 5000.25 </damping_coeff>
+    <max_steer unit="DEG">0</max_steer>
+    <brake_group> NONE </brake_group>
+    <retractable> 1 </retractable>
+  </contact>
+
+  <contact type="BOGEY" name="RIGHT_OUTBOARD">
+    <location unit="M">
+      <x>   1.76525 </x>
+      <y>   2.57263 </y>
+      <z>  -1.03168 </z>
+    </location>
+    <static_friction>  0.80 </static_friction>
+    <dynamic_friction> 0.50 </dynamic_friction>
+    <rolling_friction> 0.02 </rolling_friction>
+    <spring_coeff  unit="LBS/FT">     10000.50 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC"> 5000.25 </damping_coeff>
+    <max_steer unit="DEG">0</max_steer>
+    <brake_group> NONE </brake_group>
     <retractable> 1 </retractable>
   </contact>
 
@@ -272,11 +288,9 @@
 
   <function name="aero/alpha-rad-corr">
     <description>Alpha corrected with Vj</description>
-    <documentation>
-      if vj greater than or equal to 0.1 then alpha = alpha
+      <!--if vj greater than or equal to 0.1 then alpha = alpha
       if vj is between 0.05 and 0.1 then alpha = pitch + (alpha - pitch) * k
-      if vj less than or equal to 0.05 then alpha = pitch
-    </documentation>
+      if vj less than or equal to 0.05 then alpha = pitch-->
     <ifthen>
       <ge>
         <property>aero/Vj</property>
