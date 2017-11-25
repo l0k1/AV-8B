@@ -805,11 +805,11 @@
              <independentVar lookup="column">aero/Re</independentVar>
              <tableData>
                           8639072  9502980 12958609 17308920
-                 -0.0349  -6.0903  -0.4926  -0.2136  -0.1242
-                  0.3491 -11.8091  -0.8679  -0.3194  -0.1831
+                 -0.0349  -3.0903  -0.4926  -0.2136  -0.1242
+                  0.3491  -8.8091  -0.8679  -0.3194  -0.1831
              </tableData>
            </table>
-           <value>0.3</value>
+           <value>0.1</value>
            <property>tune/roll/beta</property>
        </product>
     </function>
