@@ -133,6 +133,7 @@
     </thruster>
   </engine>
 
+  <!-- left wing tank -->
   <tank type="FUEL" number="0">
      <location unit="M">
        <x>   -0.04490 </x>
@@ -142,6 +143,8 @@
      <capacity unit="LBS"> 2511.36 </capacity>
      <contents unit="LBS"> 1255.68 </contents>
   </tank>
+
+  <!-- right wing tank -->
   <tank type="FUEL" number="1">
      <location unit="M">
        <x>   -0.04490 </x>
@@ -151,6 +154,62 @@
      <capacity unit="LBS"> 2511.36 </capacity>
      <contents unit="LBS"> 1255.68 </contents>
   </tank>
+
+  <!-- front left tank -->
+  <tank type="FUEL" number="1">
+     <location unit="M">
+       <x>   -1.66143 </x>
+       <y>   -0.61792 </y>
+       <z>    0.58048 </z>
+     </location>
+     <capacity unit="LBS"> 2511.36 </capacity>
+     <contents unit="LBS"> 1255.68 </contents>
+  </tank>
+
+  <!-- front right tank -->
+  <tank type="FUEL" number="1">
+     <location unit="M">
+       <x>   -1.66143 </x>
+       <y>    0.61792 </y>
+       <z>    0.58048 </z>
+     </location>
+     <capacity unit="LBS"> 2511.36 </capacity>
+     <contents unit="LBS"> 1255.68 </contents>
+  </tank>
+
+  <!-- left center feed tank -->
+  <tank type="FUEL" number="1">
+     <location unit="M">
+       <x>   -0.69947 </x>
+       <y>   -0.54290 </y>
+       <z>    0.18933 </z>
+     </location>
+     <capacity unit="LBS"> 2511.36 </capacity>
+     <contents unit="LBS"> 1255.68 </contents>
+  </tank>
+
+  <!-- right center feed tank -->
+  <tank type="FUEL" number="1">
+     <location unit="M">
+       <x>   -0.69947 </x>
+       <y>    0.54290 </y>
+       <z>    0.18933 </z>
+     </location>
+     <capacity unit="LBS"> 2511.36 </capacity>
+     <contents unit="LBS"> 1255.68 </contents>
+  </tank>
+
+  <!-- rear tank -->
+  <tank type="FUEL" number="1">
+     <location unit="M">
+       <x>    1.75307 </x>
+       <y>    0.00000 </y>
+       <z>    1.21878 </z>
+     </location>
+     <capacity unit="LBS"> 2511.36 </capacity>
+     <contents unit="LBS"> 1255.68 </contents>
+  </tank>
+
 
  </propulsion>
 

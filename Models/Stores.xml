@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<model>
+		<path>Aircraft/AV-8B/Models/Stores/pylons.xml</path>
+	</model>
+
+	<model>
+		<name>Centre PTB-800 Drop Tank</name>
+		<path>Aircraft/MiG-21bis/Models/Stores/PTB-800/PTB-800.xml</path>
+		<offsets>
+		<x-m>-0.3</x-m>
+		<y-m>0.00</y-m>
+		<z-m>-0.83</z-m>
+		<pitch-deg>0.00</pitch-deg>
+		</offsets>
+	</model>
+
+	<animation>
+		<object-name>UB-32 Left Inner</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+                  <property>sim/multiplay/generic/string[12]</property>
+                  <value>UB-32</value>
+            </equals>
+		</condition>
+	</animation>
+	
+</PropertyList>
