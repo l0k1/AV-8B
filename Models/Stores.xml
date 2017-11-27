@@ -7,25 +7,91 @@
 	</model>
 
 	<model>
-		<name>Centre PTB-800 Drop Tank</name>
-		<path>Aircraft/MiG-21bis/Models/Stores/PTB-800/PTB-800.xml</path>
+		<name>Left Middle Drop Tank</name>
+		<path>Aircraft/AV-8B/Models/Stores/300GalTank/300GalTankLeft.xml</path>
 		<offsets>
-		<x-m>-0.3</x-m>
-		<y-m>0.00</y-m>
-		<z-m>-0.83</z-m>
+		<x-m> 0.79884</x-m>
+		<y-m>-3.26907</y-m>
+		<z-m>-0.19803</z-m>
 		<pitch-deg>0.00</pitch-deg>
 		</offsets>
 	</model>
 
 	<animation>
-		<object-name>UB-32 Left Inner</object-name>
+		<object-name>Left Middle Drop Tank</object-name>
 		<type>select</type>
 		<condition>
 			<equals>
-                  <property>sim/multiplay/generic/string[12]</property>
-                  <value>UB-32</value>
-            </equals>
+				<property>/sim/multiplay/generic/short[1]</property>
+				<value>1</value>
+			</equals>
 		</condition>
 	</animation>
-	
+
+	<model>
+		<name>Left Inside Drop Tank</name>
+		<path>Aircraft/AV-8B/Models/Stores/300GalTank/300GalTankLeft.xml</path>
+		<offsets>
+		<x-m> 0.25856</x-m>
+		<y-m>-1.92386</y-m>
+		<z-m>-0.10093</z-m>
+		<pitch-deg>0.00</pitch-deg>
+		</offsets>
+	</model>
+
+	<animation>
+		<object-name>Left Inside Drop Tank</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>/sim/multiplay/generic/short[2]</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<model>
+		<name>Right Inside Drop Tank</name>
+		<path>Aircraft/AV-8B/Models/Stores/300GalTank/300GalTankRight.xml</path>
+		<offsets>
+		<x-m> 0.25856</x-m>
+		<y-m> 1.92386</y-m>
+		<z-m>-0.10093</z-m>
+		<pitch-deg>0.00</pitch-deg>
+		</offsets>
+	</model>
+
+	<animation>
+		<object-name>Right Inside Drop Tank</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>/sim/multiplay/generic/short[4]</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>	
+
+	<model>
+		<name>Right Middle Drop Tank</name>
+		<path>Aircraft/AV-8B/Models/Stores/300GalTank/300GalTankRight.xml</path>
+		<offsets>
+		<x-m> 0.79884</x-m>
+		<y-m> 3.26907</y-m>
+		<z-m>-0.19803</z-m>
+		<pitch-deg>0.00</pitch-deg>
+		</offsets>
+	</model>
+
+	<animation>
+		<object-name>Right Middle Drop Tank</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>/sim/multiplay/generic/short[5]</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
 </PropertyList>

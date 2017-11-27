@@ -21,7 +21,8 @@
 	<!-- Payload -->
 
 	<model>
-		<path>Aircraft/AV-8B/Models/Loads.xml</path>
+		<name>Stores</name>
+		<path>Aircraft/AV-8B/Models/Stores.xml</path>
 	</model>
 
 	<!-- Effects

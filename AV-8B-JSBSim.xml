@@ -91,15 +91,97 @@
      <y>   0.00 </y>
      <z>   0.50 </z>
    </location>
-   <pointmass name="Payload">
-    <description> 12002.08 LBS should bring model up to entered max weight </description>
+
+   <pointmass name="station1">
+    <description> Left Outbooard </description>
     <weight unit="LBS"> 0.0 </weight>
-    <location name="POINTMASS" unit="IN">
-     <x>   333.57 </x>
-     <y>     0.00 </y>
-     <z>   -13.90 </z>
+    <location name="POINTMASS" unit="M">
+     <x> 0.76539</x>
+     <y>-3.98336</y>
+     <z> 0.09917</z>
    </location>
   </pointmass>
+
+  <pointmass name="station2">
+    <description> Left Middle </description>
+    <weight unit="LBS"> 0.0 </weight>
+    <location name="POINTMASS" unit="M">
+     <x> 0.33038</x>
+     <y>-3.26933</y>
+     <z> 0.12784</z>
+   </location>
+  </pointmass>
+
+  <pointmass name="station3">
+    <description> Left Inboard </description>
+    <weight unit="LBS"> 0.0 </weight>
+    <location name="POINTMASS" unit="M">
+     <x>-0.09229</x>
+     <y>-1.92335</y>
+     <z> 0.22196</z>
+   </location>
+  </pointmass>
+
+  <pointmass name="station4">
+    <description> Center </description>
+    <weight unit="LBS"> 0.0 </weight>
+    <location name="POINTMASS" unit="M">
+     <x>-0.77166</x>
+     <y> 0.00000</y>
+     <z>-0.22959</z>
+   </location>
+  </pointmass>
+
+  <pointmass name="station5">
+    <description> Right Inboard </description>
+    <weight unit="LBS"> 0.0 </weight>
+    <location name="POINTMASS" unit="M">
+     <x>-0.09229</x>
+     <y> 1.92335</y>
+     <z> 0.22196</z>
+   </location>
+  </pointmass>
+
+  <pointmass name="station6">
+    <description> Right Middle </description>
+    <weight unit="LBS"> 0.0 </weight>
+    <location name="POINTMASS" unit="M">
+     <x> 0.33038</x>
+     <y> 3.26933</y>
+     <z> 0.12784</z>
+   </location>
+  </pointmass>
+
+  <pointmass name="station7">
+    <description> Right Outbooard </description>
+    <weight unit="LBS"> 0.0 </weight>
+    <location name="POINTMASS" unit="M">
+     <x> 0.76539</x>
+     <y> 3.98336</y>
+     <z> 0.09917</z>
+   </location>
+  </pointmass>
+
+  <pointmass name="station8">
+    <description> Left Sidewinder </description>
+    <weight unit="LBS"> 0.0 </weight>
+    <location name="POINTMASS" unit="M">
+     <x>-0.09229</x>
+     <y>-2.59224</y>
+     <z> 0.26600</z>
+   </location>
+  </pointmass>
+
+  <pointmass name="station9">
+    <description> Right Sidewinder </description>
+    <weight unit="LBS"> 0.0 </weight>
+    <location name="POINTMASS" unit="M">
+     <x>-0.09229</x>
+     <y> 2.59224</y>
+     <z> 0.26600</z>
+   </location>
+  </pointmass>
+
  </mass_balance>
 
  <propulsion>
@@ -117,6 +199,16 @@
     </orient>
     <feed> 0 </feed>
     <feed> 1 </feed>
+    <feed> 2 </feed>
+    <feed> 3 </feed>
+    <feed> 4 </feed>
+    <feed> 5 </feed>
+    <feed> 6 </feed>
+    <feed> 7 </feed>
+    <feed> 8 </feed>
+    <feed> 9 </feed>
+    <feed> 10 </feed>
+    <feed> 11 </feed>
 
     <thruster file="direct">
      <sense> 1 </sense>
@@ -133,83 +225,167 @@
     </thruster>
   </engine>
 
+  <!-- 
+  fuel tank reference:
+  0 - left wing
+  1 - right wing
+  2 - front left
+  3 - front right
+  4 - left center feed
+  5 - right center feed
+  6 - rear
+  7 - accumulator
+  8 - left middle drop
+  9 - left inside drop
+  10 - right inside drop
+  11 - right middle drop
+-->
+
   <!-- left wing tank -->
-  <tank type="FUEL" number="0">
+  <tank type="FUEL">
      <location unit="M">
        <x>   -0.04490 </x>
        <y>   -1.46810 </y>
        <z>    1.03963 </z>
      </location>
-     <capacity unit="LBS"> 2511.36 </capacity>
-     <contents unit="LBS"> 1255.68 </contents>
+     <capacity unit="LBS"> 2468.4 </capacity>
+     <contents unit="LBS"> 2468.4 </contents>
+     <priority>3</priority>
   </tank>
 
   <!-- right wing tank -->
-  <tank type="FUEL" number="1">
+  <tank type="FUEL">
      <location unit="M">
        <x>   -0.04490 </x>
        <y>    1.46810 </y>
        <z>    1.03963 </z>
      </location>
-     <capacity unit="LBS"> 2511.36 </capacity>
-     <contents unit="LBS"> 1255.68 </contents>
+     <capacity unit="LBS"> 2468.4 </capacity>
+     <contents unit="LBS"> 2468.4 </contents>
+     <priority>3</priority>
   </tank>
 
   <!-- front left tank -->
-  <tank type="FUEL" number="1">
+  <tank type="FUEL">
      <location unit="M">
        <x>   -1.66143 </x>
        <y>   -0.61792 </y>
        <z>    0.58048 </z>
      </location>
-     <capacity unit="LBS"> 2511.36 </capacity>
-     <contents unit="LBS"> 1255.68 </contents>
+     <capacity unit="LBS"> 531.30 </capacity>
+     <contents unit="LBS"> 531.30 </contents>
+     <priority>4</priority>
   </tank>
 
   <!-- front right tank -->
-  <tank type="FUEL" number="1">
+  <tank type="FUEL">
      <location unit="M">
        <x>   -1.66143 </x>
        <y>    0.61792 </y>
        <z>    0.58048 </z>
      </location>
-     <capacity unit="LBS"> 2511.36 </capacity>
-     <contents unit="LBS"> 1255.68 </contents>
+     <capacity unit="LBS"> 531.30 </capacity>
+     <contents unit="LBS"> 531.30 </contents>
+     <priority>4</priority>
   </tank>
 
   <!-- left center feed tank -->
-  <tank type="FUEL" number="1">
+  <tank type="FUEL">
      <location unit="M">
        <x>   -0.69947 </x>
        <y>   -0.54290 </y>
        <z>    0.18933 </z>
      </location>
-     <capacity unit="LBS"> 2511.36 </capacity>
-     <contents unit="LBS"> 1255.68 </contents>
+     <capacity unit="LBS"> 310.20 </capacity>
+     <contents unit="LBS"> 310.20 </contents>
+     <priority>5</priority>
   </tank>
 
   <!-- right center feed tank -->
-  <tank type="FUEL" number="1">
+  <tank type="FUEL">
      <location unit="M">
        <x>   -0.69947 </x>
        <y>    0.54290 </y>
        <z>    0.18933 </z>
      </location>
-     <capacity unit="LBS"> 2511.36 </capacity>
-     <contents unit="LBS"> 1255.68 </contents>
+     <capacity unit="LBS"> 310.20 </capacity>
+     <contents unit="LBS"> 310.20 </contents>
+     <priority>5</priority>
   </tank>
 
   <!-- rear tank -->
-  <tank type="FUEL" number="1">
+  <tank type="FUEL">
      <location unit="M">
        <x>    1.75307 </x>
        <y>    0.00000 </y>
        <z>    1.21878 </z>
      </location>
-     <capacity unit="LBS"> 2511.36 </capacity>
-     <contents unit="LBS"> 1255.68 </contents>
+     <capacity unit="LBS"> 1062.6 </capacity>
+     <contents unit="LBS"> 1062.6 </contents>
+     <priority>5</priority>
   </tank>
 
+  <!-- accumulator -->
+  <tank type="FUEL">
+     <location unit="M">
+       <x>   -0.69947 </x>
+       <y>    0.00000 </y>
+       <z>    0.18933 </z>
+     </location>
+     <capacity unit="LBS"> 10.0 </capacity>
+     <contents unit="LBS"> 10.0 </contents>
+     <priority>6</priority>
+  </tank>
+
+  <!-- for the external tanks, 300 gals is 1980 lbs -->
+
+  <!-- left middle drop tank -->
+  <tank type="FUEL">
+     <location unit="M">
+       <x>    0.79884 </x>
+       <y>   -3.26907 </y>
+       <z>   -0.19803 </z>
+     </location>
+     <capacity unit="LBS"> 1980.0 </capacity>
+     <contents unit="LBS"> 0.0 </contents>
+     <priority>1</priority>
+  </tank>
+
+  <!-- left inside drop tank -->
+  <tank type="FUEL">
+     <location unit="M">
+       <x>    0.25856 </x>
+       <y>   -1.92386 </y>
+       <z>   -0.10093 </z>
+     </location>
+     <capacity unit="LBS"> 1980.0 </capacity>
+     <contents unit="LBS"> 0.0 </contents>
+     <priority>2</priority>
+  </tank>
+
+  <!-- right inside drop tank -->
+  <tank type="FUEL">
+     <location unit="M">
+       <x>    0.25856 </x>
+       <y>    1.92386 </y>
+       <z>   -0.10093 </z>
+     </location>
+     <capacity unit="LBS"> 1980.0 </capacity>
+     <contents unit="LBS"> 0.0 </contents>
+     <priority>2</priority>
+  </tank>
+
+  <!-- right middle drop tank -->
+  <tank type="FUEL">
+     <location unit="M">
+       <x>    0.79884 </x>
+       <y>    3.26907 </y>
+       <z>   -0.19803 </z>
+     </location>
+     <capacity unit="LBS"> 1980.0 </capacity>
+     <contents unit="LBS"> 0.0 </contents>
+     <priority>1</priority>
+  </tank>
 
  </propulsion>
 
@@ -652,6 +828,7 @@
               <value>-0.147</value>
               <property>aero/alpha-20</property>
             </product>
+            <value>0.027</value> <!-- to prevent negative drag due to alpha -->
           </sum>
           <property>tune/drag/alpha</property>
        </product>
