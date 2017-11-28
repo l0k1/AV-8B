@@ -967,7 +967,7 @@
 
   <axis name="SIDE">
 
-    <!--<function name="aero/force/Side_beta">
+    <function name="aero/force/Side_beta">
        <description>Side force due to beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -976,8 +976,9 @@
            <value> -0.6496 </value>
            <property>tune/side/beta</property>
        </product>
-    </function>-->
-    <!--<function name="aero/force/Side_roll_rate">
+    </function>
+
+    <function name="aero/force/Side_roll_rate">
        <description>Side force due to roll rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -995,9 +996,9 @@
            </table>
            <property>tune/side/roll_rate</property>
        </product>
-    </function>-->
+    </function>
 
-    <!--<function name="aero/force/Side_yaw_rate">
+    <function name="aero/force/Side_yaw_rate">
        <description>Side force due to yaw rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -1007,9 +1008,9 @@
            <value> 0.7938 </value>
            <property>tune/side/yaw_rate</property>
        </product>
-    </function>-->
+    </function>
 
-    <!--<function name="aero/force/Side_rudder">
+    <function name="aero/force/Side_rudder">
        <description>Side force due to rudder</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -1018,7 +1019,7 @@
            <value> 0.1975 </value>
            <property>tune/side/rudder</property>
        </product>
-    </function>-->
+    </function>
 
   </axis>
 
