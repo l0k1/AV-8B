@@ -1,0 +1,402 @@
+
+<!-- only caring about voltage, keeping it simple.
+	the reason being that i have 0 data on amperage for this system -->
+
+<system name="electric">
+
+	<channel execrate="4" name="sources">
+		<!--
+			sources are:
+			external, 115v ac
+			generator, 115v ac
+			apu, 115v ac
+			battery, 28v
+			
+			alternator? for idec and decu. only 3 mentions in the manual
+			
+			apu requires a 28v bus power in standby mode or battery in emergency mode
+			the GTS starts and accelerates to operating speed within 25 seconds
+		-->
+		<switch name="electric/sources/external-volts">
+			<default value="0"/>
+			<test logic="AND" value="115">
+				electric/external-connected == 1
+			</test>
+		</switch>
+		
+		<fcs_function name="trash/electric/sources/gen-volts">
+			<function>
+				<table>
+					<independentVar lookup="row">propulsion/engine/n1</indpendentVar>
+					<tableData>
+						0.0		0.0
+						30.0	115.0
+						110.0	115.0
+					</tableData>
+				</table>
+			</function>
+			<output>electric/sources/gen-volts</output>
+		</fcs_function>
+		
+		<switch name="electric/sources/apu-volts">
+			<default value="0"/>
+			<test logic="AND" value="apu/volts-out">
+				electric/apu-switch == 1
+			</test>
+		</switch>
+		
+		<switch name="electric/sources/battery-volts">
+			<default value="0"/>
+			<test logic="AND" value="electric/battery/volts-out">
+				electric/battery-switch == 1
+			</test>
+		</switch>
+		
+	</channel>
+	
+	<channel execrate="4" name="relays">
+	
+		<!-- 
+			ext power relay
+			switches between external power and main generator power
+			on if battery switch is on, ext power is connected and good, and main gen is not on
+		-->
+		
+		<switch name="electric/relays/main-ac-bus-contactor">
+			<default value="electric/sources/gen-volts"/>
+			<test logic="AND" value="electric/sources/external-volts">
+				electric/battery-switch == 1
+				electric/external-connected == 1
+				electric/sources/external-volts ge 112
+				electric/sources/gen-volts le 10
+			</test>
+		</switch>
+	
+		<!--
+			gen/apu relay
+			switches between the generator/external and the apu
+			on if main gen is off and apu is producing adequate voltage
+		-->
+		<switch name="electric/relays/main-gen-on-relay">
+			<default value="electric/relays/main-ac-bus-contactor"/>
+			<test logic="AND" value="electric/sources/apu-volts">
+				electric/relays/main-ac-bus-contactor le 10
+				electric/sources/apu-volts ge 112
+			</test>
+		</switch>
+		
+		<!-- main dc bus contactor -->
+		<switch name="electric/relays/main-dc-bus-contactor">
+			<default value="electric/modifiers/main-rec"/>
+			<test logic="AND" value="0">
+				electric/relays/main-ac-bus-contactor le 10
+				electric/sources/apu-volts ge 112
+			</test>
+		</switch>
+		
+		<!-- standby ac relay
+			main switch pos energizes the relay and shuts down standby tru
+			stby switch pos deenergizes emer dc bus contactor which switches power on emer dc bus and alert buses from main to stby -->
+		<switch name="electric/relays/standby-tru-cutoff-relay">
+			<default value="electric/relays/main-ac-bus-contactor"/>
+			<test logic="AND" value="0">
+				electric/standby-switch != 1
+			</test>
+		</switch>
+		
+		<!-- emer dc bus contactor flows main dc if main/stby switch is set to main, else flows standby dc -->
+		<switch name="electric/relays/emer-dc-bus-contactor">
+			<default value="electric/modifier/main-rec"/>
+			<test logic="AND" value="electric/modifier/standby-rec">
+				electric/standby-switch != 1
+			</test>
+		</switch>
+		
+		<!-- standby TRU dc auto shutdown relay -->
+		<switch name="electric/relays/standby-tru-warning-relay">
+			<default value="electric/modifier/standby-rec"/>
+			<test logic="AND" value="0">
+				electric/modifier/standby-rec le 24.75
+			</test>
+		</switch
+		
+		<!-- main power sensing relay, sets to 0 if TRU voltage drops below 24.75 -->
+		<switch name="electric/relays/main-power-sensing-relay">
+			<default value="electric/modifier/main-rec"/>
+			<test logic="AND" value="0">
+				electric/modifier/main-rec le 24.75
+			</test>
+		</switch>
+		
+		<!-- flight control emergency power, sets true at alpha > 8 and mach > 0.4, stays on for 30 seconds minimum -->
+		
+		<pure_gain name="electric/relays/flight-control-emer-bus-previous">
+			<input>electric/relays/flight-control-emer-bus-init</input>
+			<gain>1</gain>
+		</switch>
+		
+		<switch name="electric/relays/flight-control-emer-bus-init">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				orientation/alpha-deg ge 8
+				velocities/mach ge 0.4
+			</test>
+		</switch>
+		
+		<switch name="trash/electric/relays/flight-control-emer-bus-count-pre">
+			<default value="electric/relays/flight-control-emer-bus-count">
+			<test logic="AND" value="0">
+				electric/relays/flight-control-emer-bus-previous == 0
+				electric/relays/flight-control-emer-bus-init == 1
+			</test>
+			<output>electric/relays/flight-control-emer-bus-count</output>
+		</switch>
+		
+		<switch name="electric/relays/flight-control-emer-bus-mem">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				electric/relays/flight-control-emer-bus-count le 120
+				electric/relays/flight-control-emer-bus-init == 1
+			</test>
+		</switch>
+		
+		<fcs_function name="trash/electric/relays/flight-control-emer-bus-count">
+			<function>
+				<ifthen>
+					<property>electric/relays/flight-control-emer-bus-mem</property>
+					<sum>
+						<property>electric/relays/flight-control-emer-bus-count</property>
+						<value>1</value>
+					</sum>
+					<property>electric/relays/flight-control-emer-bus-count</property>
+				</ifthen>
+			</function>
+			<output>electric/relays/flight-control-emer-bus-count</output>
+		</fcs_function>
+		
+		<switch name="electric/relays/flight-control-emer-bus-contactor">
+			<default value="0"/>
+			<test logic="AND" value="electric/relays/standby-tru-warning-relay">
+				electric/relays/flight-control-emer-bus-mem == 1
+			</test>
+		</switch>
+		
+		<!-- alert dc bus relay -->
+		<switch name="electric/relays/alert-dc-bus-relay">
+			<default value="electric/relays/emer-dc-bus-contactor"/>
+			<test logic="AND" value="electric/sources/battery-volts">
+				electric/battery-switch == -1
+			</test>
+		</switch>
+		
+	</channel>
+	
+	<channel execrate="4" name="battery">
+		<!-- for battery charging -->
+	</channel>
+	
+	<channel execrate="4" name="modifiers">
+		<!-- 2 inverters, 2 rectifiers, 1 step down transformer -->
+		
+		<!-- main rectifier -->
+		<!-- 115v AC to 28v DC -->
+		<pure_gain name="electric/modifiers/main-rec">
+			<input>electric/relays/main-gen-on-relay</input>
+			<gain>0.24348</gain>
+		</pure_gain>
+		
+		<!-- standby rectifier -->
+		<!-- 115v AC to 28v DC -->
+		<pure_gain name="electric/modifiers/standby-rec">
+			<input>electric/relays/standby-tru-cutoff-relay</input>
+			<gain>0.24348</gain>
+		</pure_gain>
+		
+		<!-- 115v inverter -->
+		<fcs_function name="trash/electric/modifiers/inverter-115v">
+			<function>
+				<min>
+					<value>115</value>
+					<product>
+						<sum>
+							<property>electric/modifiers/main-rec</property>
+							<property>electric/relays/flight-control-emer-bus-contactor</property>
+						</sum>
+						<value>4.108</value>
+					</product>
+				</min>
+			</function>
+			<output>electric/modifiers/inverter-115v</output>
+		</fcs_function>
+		
+		<!-- 26v inverter -->
+		<fcs_function name="trash/electric/modifiers/inverter-26v">
+			<function>
+				<min>
+					<value>26</value>
+					<product>
+						<sum>
+							<property>electric/modifiers/main-rec</property>
+							<property>electric/relays/flight-control-emer-bus-contactor</property>
+						</sum>
+						<value>0.929</value>
+					</product>
+				</min>
+			</function>
+			<output>electric/modifiers/inverter-26v</output>
+		</fcs_function>
+		
+		<!-- step down transformer 115v -> 26v -->
+		
+		<pure_gain name="electric/modifiers/auto-xfmr">
+			<input>electric/relays/main-gen-on-relay</input>
+			<gain>0.2261</gain>
+		</pure_gain>
+		
+	</channel>
+	
+	<channel execrate="4" name="buses">
+	
+		<pure_gain name="electric/bus/flt-cont-26-vac">
+			<input>electric/modifiers/inverter-26v</input>
+			<gain>1.0</gain>
+		</pure_gain>
+	
+		<pure_gain name="electric/bus/flt-cont-115-vac">
+			<input>electric/modifiers/inverter-115v</input>
+			<gain>1.0</gain>
+		</pure_gain>
+		
+		<pure_gain name="electric/bus/main-115-200-volt-ac">
+			<input>electric/relays/main-ac-bus-contactor</input>
+			<gain>1.0</gain>
+		</pure_gain>
+		
+		<pure_gain name="electric/bus/essential-26-volt-ac">
+			<input>electric/modifiers/auto-xfmr</input>
+			<gain>1.0</gain>
+		</pure_gain>
+		
+		<pure_gain name="electric/bus/essential-115-200-volt-ac">
+			<input>electric/relays/main-gen-on-relay</input>
+			<gain>1.0</gain>
+		</pure_gain>
+		
+		<pure_gain name="electric/bus/main-28-volt-dc">
+			<input>electric/relays/main-dc-bus-contactor</input>
+			<gain>1.0</gain>
+		</pure_gain>
+		
+		<switch name="electric/bus/armament-28-volt-dc">
+			<default value="0">
+			<test logic="AND" value="electric/relays/main-dc-bus-contactor">
+				gear handle up
+				wow = 0
+				or
+				bus override switch = on
+				gear handle down
+			</test>
+		</switch>
+		
+		<switch name="electric/bus/master-arm-28-volt-dc">
+			<default value="0">
+			<test logic="AND" value="electric/relays/main-dc-bus-contactor">
+				(
+				gear handle up
+				wow = 0
+				or
+				bus override switch = on
+				gear handle down
+				)
+				and
+				master arm switch = on
+			</test>
+		</switch>
+		
+		<summer name="trash/electric/bus/flight-control-emer-dc">
+			<input>electric/modifiers/main-rec</input>
+			<input>electric/relays/flight-control-emer-bus-contactor</input>
+			<output>electric/bus/flight-control-emer-dc</output>
+		</summer>
+		
+		<pure_gain name="electric/bus/essential-28-volt-dc">
+			<input>electric/modifiers/main-rec</input>
+			<gain>1.0</gain>
+		</pure_gain>
+		
+		<!-- also needs this:
+			gear handle up
+			wow = 0
+			or
+			arm override switch = on
+			gear handle down
+		-->
+		<summer name="trash/electric/bus/jett-28-volt-dc">
+			<input>electric/relays/emer-dc-bus-contactor</input>
+			<input>electric/relays/alert-dc-bus-relay</input>
+			<output>electric/bus/jett-28-volt-dc</output>
+			<clipto>
+				<min>0</min>
+				<max>28</max>
+			</clipto>
+		</summer>
+		
+		<summer name="trash/electric/bus/emergency-28-volt-dc">
+			<input>electric/relays/emer-dc-bus-contactor</input>
+			<input>electric/relays/alert-dc-bus-relay</input>
+			<output>electric/bus/emergency-28-volt-dc</output>
+			<clipto>
+				<min>0</min>
+				<max>28</max>
+			</clipto>
+		</summer>
+		
+		<fcs_function name="trash/electric/bus/switched-28-volt-dc-battery">
+			<function>
+				<min>
+					<sum>
+						<product>
+							<min>
+								<value>0</value>
+								<property>electric/battery-switch</property>
+							</min>
+							<property>electric/bus/ground-service-24-28-volt-dc</property>
+						</product>
+						<product>
+							<property>electric/standby-switch</property>
+							<property>electric/modifiers/main-rec</property>
+						</product>
+						<property>electric/relays/standby-tru-warning-relay</property>
+					</sum>
+					<value>28</value>
+				</min>
+			</function>
+			<output>electric/bus/switched-28-volt-dc-battery</output>
+		</fcs_function>
+		
+		<fcs_function name="trash/electric/bus/ground-service-24-28-volt-dc">
+			<function>
+				<min>
+					<sum>
+						<product>
+							<min>
+								<value>0</value>
+								<property>electric/battery-switch</property>
+							</min>
+							<property>electric/bus/switched-28-volt-dc-battery</property>
+						</product>
+						<property>electric/sources/battery-volts</property>
+					</sum>
+					<value>28</value>
+				</min>
+			</function>
+			<output>electric/bus/ground-service-24-28-volt-dc</output>
+		</fcs_function>
+		
+		<pure_gain name="electric/bus/alert-24-28-volt-dc">
+			<input>electric/relays/alert-dc-bus-relay</input>
+			<gain>1.0</gain>
+		</pure_gain>
+		
+	</channel>
+</system>
