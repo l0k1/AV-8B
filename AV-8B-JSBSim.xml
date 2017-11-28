@@ -67,7 +67,7 @@
    <location name="AERORP" unit="M">
      <x>    -0.22 </x>
      <y>     0.00 </y>
-     <z>     0.80 </z>
+     <z>     0.75 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
      <x>   111.19 </x>
@@ -398,7 +398,7 @@
       <z>   -1.53999 </z>
     </location>
     <static_friction>  0.80 </static_friction>
-    <dynamic_friction> 0.50 </dynamic_friction>
+    <dynamic_friction> 0.70 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
     <spring_coeff  unit="LBS/FT">     24004.35 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC"> 15502.68 </damping_coeff>
@@ -409,14 +409,14 @@
 
   <contact type="BOGEY" name="AFT">
     <location unit="M">
-      <x>    0.1.02659 </x>
+      <x>    1.02659 </x>
       <y>     0.00 </y>
-      <z>   -1.11956 </z>
+      <z>   -1.18956 </z>
     </location>
     <static_friction>  0.80 </static_friction>
-    <dynamic_friction> 0.50 </dynamic_friction>
+    <dynamic_friction> 0.70 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
-    <spring_coeff  unit="LBS/FT">     10000.35 </spring_coeff>
+    <spring_coeff  unit="LBS/FT">     20000.35 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC"> 5000.68 </damping_coeff>
     <max_steer unit="DEG"> 0.00 </max_steer>
     <brake_group> RIGHT </brake_group>
@@ -430,9 +430,9 @@
       <z>  -1.03168 </z>
     </location>
     <static_friction>  0.80 </static_friction>
-    <dynamic_friction> 0.50 </dynamic_friction>
+    <dynamic_friction> 0.70 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
-    <spring_coeff  unit="LBS/FT">     10000.50 </spring_coeff>
+    <spring_coeff  unit="LBS/FT">     20000.50 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC"> 5000.25 </damping_coeff>
     <max_steer unit="DEG">0</max_steer>
     <brake_group> NONE </brake_group>
@@ -446,9 +446,9 @@
       <z>  -1.03168 </z>
     </location>
     <static_friction>  0.80 </static_friction>
-    <dynamic_friction> 0.50 </dynamic_friction>
+    <dynamic_friction> 0.70 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
-    <spring_coeff  unit="LBS/FT">     10000.50 </spring_coeff>
+    <spring_coeff  unit="LBS/FT">     20000.50 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC"> 5000.25 </damping_coeff>
     <max_steer unit="DEG">0</max_steer>
     <brake_group> NONE </brake_group>
@@ -592,7 +592,7 @@
       <quotient>
         <product>
           <value>13</value>
-          <property>aero/qbar-psf</property>
+          <property>aero/qbarUW-psf</property>
         </product>
         <max>
           <property>propulsion/engine[0]/thrust-lbs</property>
@@ -1152,7 +1152,14 @@
                   0.3491  -8.8091  -0.8679  -0.3194  -0.1831
              </tableData>
            </table>
-           <value>0.1</value>
+           <table>
+             <independentVar lookup="row">velocities/mach</independentVar>
+             <tableData>
+                 0.0   0.001
+                 0.3   0.1
+                 1.0   1.0
+             </tableData>
+           </table>
            <property>tune/roll/beta</property>
        </product>
     </function>
