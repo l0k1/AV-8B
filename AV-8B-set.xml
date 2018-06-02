@@ -6,7 +6,7 @@
 
 		<!-- Info -->
 
-		<description>AV-8B Radar Version</description>
+		<description>AV-8B II+ Jump Jet</description>
 		<author>Petar Jedvaj, pinto</author>
 		<status>1.0</status>
 		<license>GPL v3</license>
@@ -20,7 +20,34 @@
 		<aero>AV-8B-JSBSim</aero>
 		<fuel-fraction>1.0</fuel-fraction>
 
+		<gui>
+			<style>
+				<colors>
+					<splash-font>
+						<red>1.0</red>
+						<green>1.00</green>
+						<blue>1.00</blue>
+					</splash-font>
+					<splash-screen>
+						<red>0.9</red>
+						<green>0.2</green>
+						<blue>0.15</blue>
+					</splash-screen>
+				</colors>
+			</style>
+		</gui>
+
+		<previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash.png</path>
+			</preview>
+		</previews>
+
+
 		<startup>
+			<splash-title>AV-8B Jump Jet</splash-title>
 			<splash-texture>Aircraft/AV-8B/Splash.png</splash-texture>
 		</startup>
 
@@ -84,7 +111,7 @@
 			<refuel>
 				<type>probe</type>
 				<serviceable type="bool">true</serviceable>
-			</refuel>	  
+			</refuel>
 		</systems>
 
 		<!-- Views -->
@@ -99,7 +126,7 @@
 				<default-field-of-view-deg> 86.3 </default-field-of-view-deg>
 			</config>
 		</view>
-		
+
 		<view n="100">
 			<name>Pilot cam</name>
 			<internal archive="y">false</internal>
@@ -184,7 +211,7 @@
 				<menu n="100">
 					<label>AV-8B</label>
 					<enabled type="bool">true</enabled>
-				   
+
 					<item>
 						<label>Select Livery</label>
 						<binding>
@@ -338,7 +365,7 @@
 
 <!-- Keyboard Shortcuts -->
 
-	<input> 
+	<input>
 		<keyboard>
 			<key n="109">
 				<name>m</name>
