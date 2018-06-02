@@ -20,7 +20,7 @@
     stall speed:   91.79kts
     max weight:    31004.50 lb
     length:        46.33 ft
-    wing: 
+    wing:
      span:         30.33 ft
      area:         230.00 sq-ft
      mean chord:   8.75 ft
@@ -225,7 +225,7 @@
     </thruster>
   </engine>
 
-  <!-- 
+  <!--
   fuel tank reference:
   0 - left wing
   1 - right wing
@@ -1157,7 +1157,8 @@
              <independentVar lookup="row">velocities/mach</independentVar>
              <tableData>
                  0.0   0.001
-                 0.3   0.1
+                 0.2   0.15
+                 0.3   0.4
                  1.0   1.0
              </tableData>
            </table>
@@ -1268,7 +1269,7 @@
        </product>
     </function>
 
-    <!--<function name="aero/moment/Yaw_roll_rate">
+    <function name="aero/moment/Yaw_roll_rate">
        <description>Yaw moment due to roll rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -1287,7 +1288,7 @@
            </table>
            <property>tune/yaw/roll_rate</property>
        </product>
-    </function>-->
+    </function>
 
     <function name="aero/moment/Yaw_damp">
        <description>Yaw moment due to yaw rate</description>
