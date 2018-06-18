@@ -282,6 +282,8 @@
 					<alpha_rate type="double">1</alpha_rate>
 					<elevator type="double">1</elevator>
 					<flap type="double">1</flap>
+					<mach type="double">1</mach>
+					<mach-alpha type="double">1</mach-alpha>
 				</lift>
 				<drag>
 					<minimum type="double">1</minimum>
@@ -293,7 +295,7 @@
 					<gear type="double">1</gear>
 					<flap type="double">1</flap>
 					<speedbrake type="double">1</speedbrake>
-					<chute type="double">1</chute>
+					<mach-alpha type="double">1</mach-alpha>
 				</drag>
 				<side>
 					<beta type="double">1</beta>
@@ -306,6 +308,8 @@
 					<elevator type="double">1</elevator>
 					<damp type="double">1</damp>
 					<alphadot type="double">1</alphadot>
+					<mach type="double">1</mach>
+					<mach-alpha type="double">1</mach-alpha>
 				</pitch>
 				<roll>
 					<beta type="double">1</beta>

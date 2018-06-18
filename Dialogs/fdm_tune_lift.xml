@@ -1,25 +1,106 @@
 <PropertyList>
-
  <name>fdm_tune_lift</name>
  <modal>false</modal>
  <layout>vbox</layout>
  <width>450</width>
- <height>315</height>
+ <height>415</height>
   <group>
    <text>
     <label>Tune dat lift</label>
 	<x>10</x>
-	<y>290</y>
+	<y>390</y>
   </text>
-  
+
+  <!-- slider -1 -->
+
+  <text>
+     <x>10</x>
+     <y>370</y>
+     <label>Lift_mach</label>
+  </text>
+
+  <text>
+     <x>245</x>
+     <y>370</y>
+     <label>-9.9999</label>
+     <format>%-0.4f</format>
+     <property>/fdm/jsbsim/tune/lift/mach</property>
+     <live>true</live>
+  </text>
+
+  <text>
+     <x>400</x>
+     <y>370</y>
+     <label>-9.9999</label>
+     <format>%-0.4f</format>
+     <property>/fdm/jsbsim/aero/force/Lift_mach</property>
+     <live>true</live>
+  </text>
+
+  <slider>
+     <vertical>false</vertical>
+     <x>10</x>
+     <y>345</y>
+     <width>425</width>
+     <height>25</height>
+     <fraction>0</fraction>
+     <property>/fdm/jsbsim/tune/lift/mach</property>
+     <min>-2</min>
+     <max>2</max>
+     <binding>
+        <command>dialog-apply</command>
+     </binding>
+  </slider>
+
+  <!-- slider 0 -->
+
+  <text>
+     <x>10</x>
+     <y>320</y>
+     <label>Lift_mach_alpha</label>
+  </text>
+
+  <text>
+     <x>245</x>
+     <y>320</y>
+     <label>-9.9999</label>
+     <format>%-0.4f</format>
+     <property>/fdm/jsbsim/tune/lift/mach-alpha</property>
+     <live>true</live>
+  </text>
+
+  <text>
+     <x>400</x>
+     <y>320</y>
+     <label>-9.9999</label>
+     <format>%-0.4f</format>
+     <property>/fdm/jsbsim/aero/force/Lift_mach_alpha</property>
+     <live>true</live>
+  </text>
+
+  <slider>
+     <vertical>false</vertical>
+     <x>10</x>
+     <y>295</y>
+     <width>425</width>
+     <height>25</height>
+     <fraction>0</fraction>
+     <property>/fdm/jsbsim/tune/lift/mach-alpha</property>
+     <min>-2</min>
+     <max>2</max>
+     <binding>
+        <command>dialog-apply</command>
+     </binding>
+  </slider>
+
       <!-- slider 1 -->
-      
+
       <text>
          <x>10</x>
          <y>270</y>
          <label>Lift_alpha</label>
       </text>
-      
+
       <text>
          <x>245</x>
          <y>270</y>
@@ -28,7 +109,7 @@
          <property>/fdm/jsbsim/tune/lift/alpha</property>
          <live>true</live>
       </text>
-      
+
       <text>
          <x>400</x>
          <y>270</y>
@@ -37,7 +118,7 @@
          <property>/fdm/jsbsim/aero/force/Lift_alpha</property>
          <live>true</live>
       </text>
-      
+
       <slider>
          <vertical>false</vertical>
          <x>10</x>
@@ -52,15 +133,15 @@
             <command>dialog-apply</command>
          </binding>
       </slider>
-      
+
       <!-- slider 2 -->
-      
+
       <text>
          <x>10</x>
          <y>220</y>
          <label>Lift_pitch_rate</label>
       </text>
-      
+
       <text>
          <x>245</x>
          <y>220</y>
@@ -69,7 +150,7 @@
          <property>/fdm/jsbsim/tune/lift/pitch_rate</property>
          <live>true</live>
       </text>
-      
+
       <text>
          <x>400</x>
          <y>220</y>
@@ -78,7 +159,7 @@
          <property>/fdm/jsbsim/aero/force/Lift_pitch_rate</property>
          <live>true</live>
       </text>
-      
+
       <slider>
          <vertical>false</vertical>
          <x>10</x>
@@ -93,15 +174,15 @@
             <command>dialog-apply</command>
          </binding>
       </slider>
-      
+
       <!-- slider 3 -->
-      
+
       <text>
          <x>10</x>
          <y>170</y>
          <label>Lift_alpha_rate</label>
       </text>
-      
+
       <text>
          <x>245</x>
          <y>170</y>
@@ -110,7 +191,7 @@
          <property>/fdm/jsbsim/tune/lift/alpha_rate</property>
          <live>true</live>
       </text>
-      
+
       <text>
          <x>400</x>
          <y>170</y>
@@ -119,7 +200,7 @@
          <property>/fdm/jsbsim/aero/force/Lift_alpha_rate</property>
          <live>true</live>
       </text>
-      
+
       <slider>
          <vertical>false</vertical>
          <x>10</x>
@@ -134,15 +215,15 @@
             <command>dialog-apply</command>
          </binding>
       </slider>
-      
+
       <!-- slider 4 -->
-      
+
       <text>
          <x>10</x>
          <y>120</y>
          <label>Lift_elevator</label>
       </text>
-      
+
       <text>
          <x>245</x>
          <y>120</y>
@@ -151,7 +232,7 @@
          <property>/fdm/jsbsim/tune/lift/elevator</property>
          <live>true</live>
       </text>
-      
+
       <text>
          <x>400</x>
          <y>120</y>
@@ -160,7 +241,7 @@
          <property>/fdm/jsbsim/aero/force/Lift_elevator</property>
          <live>true</live>
       </text>
-      
+
       <slider>
          <vertical>false</vertical>
          <x>10</x>
@@ -175,15 +256,15 @@
             <command>dialog-apply</command>
          </binding>
       </slider>
-      
+
       <!-- slider 5 -->
-      
+
       <text>
          <x>10</x>
          <y>70</y>
          <label>Lift_flap</label>
       </text>
-      
+
       <text>
          <x>245</x>
          <y>70</y>
@@ -192,7 +273,7 @@
          <property>/fdm/jsbsim/tune/lift/flap</property>
          <live>true</live>
       </text>
-      
+
       <text>
          <x>400</x>
          <y>70</y>
@@ -201,7 +282,7 @@
          <property>/fdm/jsbsim/aero/force/Lift_flap</property>
          <live>true</live>
       </text>
-      
+
       <slider>
          <vertical>false</vertical>
          <x>10</x>
@@ -216,9 +297,9 @@
             <command>dialog-apply</command>
          </binding>
       </slider>
-      
+
       <!-- buttons -->
-  
+
       <button>
          <legend>Apply</legend>
          <y>10</y>
@@ -227,7 +308,7 @@
             <command>dialog-apply</command>
          </binding>
       </button>
-      
+
       <button>
          <legend>Close</legend>
          <y>10</y>
@@ -239,7 +320,7 @@
             <command>dialog-close</command>
          </binding>
       </button>
-   
+
    </group>
 
 </PropertyList>

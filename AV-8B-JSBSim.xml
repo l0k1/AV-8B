@@ -754,6 +754,7 @@
               <value>4</value>
             </pow>
           </product>
+          <property>tune/lift/mach</property>
         </product>
     </function>
 
@@ -784,6 +785,7 @@
               <property>aero/alpha-20</property>
             </product>
           </sum>
+          <property>tune/lift/mach-alpha</property>
         </product>
     </function>
 
@@ -897,6 +899,7 @@
               <property>aero/alpha-20</property>
             </product>
           </sum>
+          <property>tune/drag/mach-alpha</property>
         </product>
     </function>
 
@@ -1111,7 +1114,7 @@
               <value>4</value>
             </pow>
           </product>
-          <property>tune/drag/mach</property>
+          <property>tune/pitch/mach</property>
         </product>
     </function>
 
@@ -1130,6 +1133,7 @@
             </product>
             <property>aero/alpha-20</property>
           </product>
+          <property>tune/pitch/mach-alpha</property>
         </product>
     </function>
 
