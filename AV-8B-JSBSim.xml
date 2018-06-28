@@ -991,10 +991,10 @@
            <table>
              <independentVar lookup="row">aero/Re</independentVar>
              <tableData>
-                 8639072   0.8689
-                 9502980   0.0728
-                12958609   0.0324
-                17308920   0.0181
+                 8639072   0.3948
+                 9502980   0.0416
+                12958609   0.0127
+                17308920   0.0084
              </tableData>
            </table>
            <property>tune/side/roll_rate</property>
@@ -1008,7 +1008,7 @@
            <property>metrics/Sw-sqft</property>
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
-           <value> 0.7938 </value>
+           <value> 0.4726 </value>
            <property>tune/side/yaw_rate</property>
        </product>
     </function>
@@ -1019,7 +1019,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>fcs/rudder-pos-rad</property>
-           <value> 0.1975 </value>
+           <value> 0.1673 </value>
            <property>tune/side/rudder</property>
        </product>
     </function>
@@ -1256,7 +1256,7 @@
                   0.3491   1.0000   0.0000
              </tableData>
            </table>
-           <value>0.2</value>
+           <value>0.1674</value>
            <property>tune/yaw/alpha</property>
        </product>
     </function>
@@ -1268,7 +1268,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
-           <value> 0.0450 </value>
+           <value> 0.0825 </value>
            <property>tune/yaw/beta</property>
        </product>
     </function>
@@ -1302,7 +1302,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
-           <value> -0.3577 </value>
+           <value> -0.4981 </value>
            <property>tune/yaw/damp</property>
        </product>
     </function>
